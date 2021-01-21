@@ -1,0 +1,239 @@
+{
+    "name": "Objects and Composition",
+    "questions": [
+        {
+            "text": "Обектите в JavaScript са:",
+            "answers": [
+                {
+                    "text": "Сбор от двойки ключ-стойност, наречени свойства",
+                    "correct": true
+                },
+                {
+                    "text": "Друго име за клас",
+                    "correct": false
+                },
+                {
+                    "text": "Наименувана поредица от операции",
+                    "correct": false
+                },
+                {
+                    "text": "Линейна структура от данни",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Какъв тип данни са обектите?",
+            "answers": [
+                {
+                    "text": "Примитивен",
+                    "correct": false
+                },
+                {
+                    "text": "Референтен",
+                    "correct": true
+                },
+                {
+                    "text": "Сложен",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Посочете правилната декларация на обект:",
+            "answers": [
+                {
+                    "text": "`const myObj = [1, 2, 3]`",
+                    "correct": false
+                },
+                {
+                    "text": "`const myObj = {a: 1, b: 2, c:3}`",
+                    "correct": true
+                },
+                {
+                    "text": "`const myObj = {\"a\", \"b\", \"c\"}`",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Ключа на свойството може да бъде string, съдържащ всякакви символи.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Структурата на обектите в JavaScript трябва да се дефинира предварително и не може да бъде променяна.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": false
+                },
+                {
+                    "text": "Невярно",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "text": "Операцията `const {name,age} = person` се нарича:",
+            "answers": [
+                {
+                    "text": "Експлозия",
+                    "correct": false
+                },
+                {
+                    "text": "Дерефериране",
+                    "correct": false
+                },
+                {
+                    "text": "Деструктуриране",
+                    "correct": true
+                },
+                {
+                    "text": "Няма такава операция в JavaScript",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Метода `Object.keys()` връща:",
+            "answers": [
+                {
+                    "text": "Масив от ключовете на обекта",
+                    "correct": true
+                },
+                {
+                    "text": "Масив от свойностите на обекта",
+                    "correct": false
+                },
+                {
+                    "text": "Масив от двойки ключ-стойност на обекта, оформени като масиви",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Кой оператор е предназначен за обхождане ключовете на обект?",
+            "answers": [
+                {
+                    "text": "for-in",
+                    "correct": true
+                },
+                {
+                    "text": "for-of",
+                    "correct": false
+                },
+                {
+                    "text": "for-key",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Асоциативните масиви в JavaScript са обикновени обект.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Към какво сочи референцията `this` при изпълнение на метод на обект?",
+            "answers": [
+                {
+                    "text": "Към обекта, от който е изпълнен метода",
+                    "correct": true
+                },
+                {
+                    "text": "Към изпъления метод",
+                    "correct": false
+                },
+                {
+                    "text": "Не съществува такава референция",
+                    "correct": false
+                },
+                {
+                    "text": "Към родителя на обекта",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Обектите в JavaScript могат да съдържат в себе си други обекти.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Как наричаме техниката на комбиниране на прости обекти и методи в по-сложни обекти?",
+            "answers": [
+                {
+                    "text": "Симфония",
+                    "correct": false
+                },
+                {
+                    "text": "Композиция",
+                    "correct": true
+                },
+                {
+                    "text": "Асемблиране",
+                    "correct": false
+                },
+                {
+                    "text": "Инстанциране",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Функциите в JavaScript могат да бъдат свободно зачислявани като методи към обекти.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Какво е едно от основните приложения на формата JSON?",
+            "answers": [
+                {
+                    "text": "Обмен на данни в интернет мрежата",
+                    "correct": true
+                },
+                {
+                    "text": "Участие в древногръцки митове",
+                    "correct": false
+                },
+                {
+                    "text": "Дълбоко копиране на референтни типове",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}
