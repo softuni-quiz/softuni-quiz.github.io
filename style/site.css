@@ -4,6 +4,15 @@ body {
     font-size: 18px;
 }
 
+h1 {
+    margin: 8px;
+}
+
+.subtle {
+    font-style: italic;
+    font-size: smaller;
+}
+
 .validate-btn {
     margin: 32px auto 64px auto;
     background-color: rgb(153, 229, 183);
@@ -65,4 +74,37 @@ body {
 .question-form textarea {
     display: block;
     width: 400px;
+}
+
+.nav {
+    color: black;
+    margin: 8px;
+    padding: 4px 16px;
+    display: inline-block;
+    background-color: rgb(153, 229, 183);
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.nav:hover {
+    background-color: rgb(194, 229, 208);
+    cursor: pointer;
+}
+
+.nav:visited {
+    color: black;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.list {
+    margin-left: 0;
+    display: block;
 }

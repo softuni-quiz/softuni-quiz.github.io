@@ -1,0 +1,307 @@
+{
+    "name": "Syntax, Functions and Statements",
+    "questions": [
+        {
+            "text": "JavaScript може да се определи като:",
+            "answers": [
+                {
+                    "text": "Език от ниско ниво",
+                    "correct": false
+                },
+                {
+                    "text": "Език от високо ниво",
+                    "correct": true
+                },
+                {
+                    "text": "Компилиран език",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Типа на променливите в JavaScript може да бъде променен по време на изпълнение",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Данните в JavaScript нямат тип",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": false
+                },
+                {
+                    "text": "Невярно",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Колко числови типа с плаваща запетая има в JavaScript?",
+            "answers": [
+                {
+                    "text": "1",
+                    "correct": true
+                },
+                {
+                    "text": "2",
+                    "correct": false
+                },
+                {
+                    "text": "3",
+                    "correct": false
+                },
+                {
+                    "text": "4",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Кои оператори служат за деклариране на променлива?",
+            "answers": [
+                {
+                    "text": "`let`",
+                    "correct": true
+                },
+                {
+                    "text": "`const`",
+                    "correct": true
+                },
+                {
+                    "text": "`int`",
+                    "correct": false
+                },
+                {
+                    "text": "`var`",
+                    "correct": true
+                },
+                {
+                    "text": "`dynamic`",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Коя е ключовата дума за деклариране на функция?",
+            "answers": [
+                {
+                    "text": "`void`",
+                    "correct": false
+                },
+                {
+                    "text": "`proc`",
+                    "correct": false
+                },
+                {
+                    "text": "`method`",
+                    "correct": false
+                },
+                {
+                    "text": "`function`",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "text": "Какво ще се случи, ако една функция очаква да получи 3 аргумента, а ние подадем само два? ",
+            "answers": [
+                {
+                    "text": "Ще получим грешка при компилация",
+                    "correct": false
+                },
+                {
+                    "text": "Стойността на липсващия параметър ще бъде `undefined`",
+                    "correct": true
+                },
+                {
+                    "text": "Ще получим грешка при изпълнение",
+                    "correct": false
+                },
+                {
+                    "text": "Функцията няма да се изпълни",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Какво означава оператора `**`?",
+            "answers": [
+                {
+                    "text": "Двойна дереференция",
+                    "correct": false
+                },
+                {
+                    "text": "Факториел",
+                    "correct": false
+                },
+                {
+                    "text": "Експоненция",
+                    "correct": true
+                },
+                {
+                    "text": "Не съществува такъв оператор",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Кой оператор за сравнение взима предвид типа на данните?",
+            "answers": [
+                {
+                    "text": "`<=>`",
+                    "correct": false
+                },
+                {
+                    "text": "`===`",
+                    "correct": true
+                },
+                {
+                    "text": "`==`",
+                    "correct": false
+                },
+                {
+                    "text": "`!=`",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Условните конструкции в JavaScript работят само с Boolean стойности",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": false
+                },
+                {
+                    "text": "Невярно",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Коя от следните стойности НЕ Е falsy:",
+            "answers": [
+                {
+                    "text": "`false`",
+                    "correct": false
+                },
+                {
+                    "text": "`undefined`",
+                    "correct": false
+                },
+                {
+                    "text": "0",
+                    "correct": false
+                },
+                {
+                    "text": "празен масив",
+                    "correct": true
+                },
+                {
+                    "text": "празен низ",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Кой оператор връща на типа на дадена стойност?",
+            "answers": [
+                {
+                    "text": "`typeof`",
+                    "correct": false
+                },
+                {
+                    "text": "`instanceof`",
+                    "correct": false
+                },
+                {
+                    "text": "`is`",
+                    "correct": false
+                },
+                {
+                    "text": "`&&`",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "JavaScript може да бъде изпълнен в уеб страница в браузъра",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Функциите в JavaScript могат да бъдат съхранявани в променлива и подавани по референция (известни с термина First-class functions)",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Какво е „вложена“ функция?",
+            "answers": [
+                {
+                    "text": "Функция част от обект",
+                    "correct": false
+                },
+                {
+                    "text": "Функция дефинирана в тялото на друга функция",
+                    "correct": true
+                },
+                {
+                    "text": "Функция без странични ефекти",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Как наричаме свойството на функциите да са достъпни за изпълнение в кода преди момента на своята декларация?",
+            "answers": [
+                {
+                    "text": "Anchoring",
+                    "correct": false
+                },
+                {
+                    "text": "Compiling",
+                    "correct": false
+                },
+                {
+                    "text": "Globalization",
+                    "correct": false
+                },
+                {
+                    "text": "Hoisting",
+                    "correct": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,214 @@
+{
+    "name": "Arrays and Matrices",
+    "questions": [
+        {
+            "text": "Какъв тип данни са масивите в JavaScript?",
+            "answers": [
+                {
+                    "text": "примитивен",
+                    "correct": false
+                },
+                {
+                    "text": "референтен",
+                    "correct": true
+                },
+                {
+                    "text": "линеен",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Кой е индекса на първия елемент в масив?",
+            "answers": [
+                {
+                    "text": "-1",
+                    "correct": false
+                },
+                {
+                    "text": "0",
+                    "correct": false
+                },
+                {
+                    "text": "1",
+                    "correct": false
+                },
+                {
+                    "text": "2",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Посочете реда с правилна декларация на масив:",
+            "answers": [
+                {
+                    "text": "`const myArr = [1, 2, 3]`",
+                    "correct": true
+                },
+                {
+                    "text": "`const myArr = {1, 2, 3}`",
+                    "correct": false
+                },
+                {
+                    "text": "`const myArr = number[]{1, 2, 3}`",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Достъпването на невалиден индекс хвърля грешка.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": false
+                },
+                {
+                    "text": "Невярно",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Дължината на масивите в JavaScript може да се променя по време на изпълнение.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Кой е оператора за улавяне на всички подадени стойности в масив (rest-оператор)?",
+            "answers": [
+                {
+                    "text": "`rest()`",
+                    "correct": false
+                },
+                {
+                    "text": "`<<`",
+                    "correct": false
+                },
+                {
+                    "text": "`...`",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "text": "Методите `push` и `pop` на масива му дават възможност да работи като стек.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Какво прави метода `unshift` на масива?",
+            "answers": [
+                {
+                    "text": "Премахва и връща първия елемент",
+                    "correct": false
+                },
+                {
+                    "text": "Премахва и връща последния елемент",
+                    "correct": false
+                },
+                {
+                    "text": "Добавя елемент в началото на масива",
+                    "correct": true
+                },
+                {
+                    "text": "Добавя елемент в края на масива",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Какво е поведението на `sort()` ако не подадем сравняваща функция?",
+            "answers": [
+                {
+                    "text": "Подредба по числова големина",
+                    "correct": false
+                },
+                {
+                    "text": "Подредба по азбучен ред",
+                    "correct": true
+                },
+                {
+                    "text": "Подредба по адрес в паметта",
+                    "correct": false
+                },
+                {
+                    "text": "Хвърля грешка",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Ако не получи аргумент, метода `slice()` прави плитко копие на масива.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Какво е предназначението на втория аргумент на метода `reduce`?",
+            "answers": [
+                {
+                    "text": "Акумулатор",
+                    "correct": false
+                },
+                {
+                    "text": "Итератор",
+                    "correct": false
+                },
+                {
+                    "text": "Редуктор",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Как се нарича масив, чиито елементи са масиви с еднавка дължина?",
+            "answers": [
+                {
+                    "text": "Сложен масив",
+                    "correct": false
+                },
+                {
+                    "text": "Дълбок масив",
+                    "correct": false
+                },
+                {
+                    "text": "Правоъгълник",
+                    "correct": false
+                },
+                {
+                    "text": "Матрица",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}

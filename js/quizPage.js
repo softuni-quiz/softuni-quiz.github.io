@@ -1,7 +1,10 @@
+import { getQuiz } from './data.js';
 import html from './dom.js';
 
 
-export default function quizPage(quiz) {
+export default async function quizPage({ params: { id } }) {
+    const quiz = await getQuiz(id);
+
     const input = {
         questions: html`
         <div>
@@ -13,6 +16,7 @@ export default function quizPage(quiz) {
     return html`
     <div>
         <h1>${quiz.name}</h1>
+        <a className="nav" href="/">Назад към каталога</a>
         ${input.questions}
         ${input.button}
     </div>`;
@@ -25,16 +29,24 @@ export default function quizPage(quiz) {
 }
 
 function quizQuestion(question, index) {
+    const multi = question.answers.filter(a => a.correct).length > 1;
+
+    question.answers = question.answers.map(a => ({ a, o: Math.random() }));
+    if (!question.dontRandomize) {
+        question.answers.sort(({ o: a }, { o: b }) => a - b);
+    }
+
     const input = {
         answers: html`
         <div>
-            ${question.answers.map(a => ({a, o: Math.random()})).sort(({o: a}, {o: b}) => a - b).map((a, i) => quizAnswer(a.a, i, index))}
+            ${question.answers.map((a, i) => quizAnswer(a.a, i, index, multi))}
         </div>`
     };
 
     const e = html`
         <div className="question">
             <h3>${parseToElement(question.text)}</h3>
+            ${multi ? html`<span className="subtle">(изберете всички подходящи отговори)</span>` : ''}
             ${input.answers}
         </div>
         `;
@@ -55,11 +67,13 @@ function quizQuestion(question, index) {
     }
 }
 
-function quizAnswer(answer, index, questionIndex) {
+function quizAnswer(answer, index, questionIndex, multi = false) {
+    const inputType = multi ? 'checkbox' : 'radio';
+
     const e = html`
         <label className="answer">
-            <input name=${'question' + questionIndex} type="radio" value=${index} />
-            ${parseToElement(answer.text)}
+            <input name=${'question' + questionIndex} type=${inputType} value=${index} />
+            <span>${parseToElement(answer.text)}</span>
         </label>`;
     e.validate = validate;
 
@@ -88,6 +102,7 @@ function quizAnswer(answer, index, questionIndex) {
 }
 
 function parseToElement(text) {
+    //text = text.replace(/[<>&]/gi, sanitize);
     const tokens = text.split('`');
 
     if (tokens.length > 1) {
@@ -108,4 +123,12 @@ function parseToElement(text) {
     }
 
     return text;
+}
+
+function sanitize(match) {
+    return {
+        '<': '&lt;',
+        '>': '&gt;',
+        '&': '&amp;'
+    }[match];
 }
