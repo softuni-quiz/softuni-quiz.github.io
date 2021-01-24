@@ -38,12 +38,8 @@ export function e(type, content, attributes) {
 
 function append(child) {
     if (typeof (child) === 'string' || typeof (child) === 'number') {
-        if (child.toString().trim()[0] === '<') {
-            this.innerHTML = child;
-        } else {
-            child = document.createTextNode(child);
-            this.appendChild(child);
-        }
+        child = document.createTextNode(child);
+        this.appendChild(child);
     } else if (Array.isArray(child)) {
         for (let node of child) {
             this.append(node);

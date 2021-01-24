@@ -10,5 +10,9 @@
     {
         "name": "Objects and Composition",
         "id": "03"
+    },
+    {
+        "name": "DOM Introduction",
+        "id": "04"
     }
 ]

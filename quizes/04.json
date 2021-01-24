@@ -1,0 +1,279 @@
+{
+    "name": "DOM Introduction",
+    "questions": [
+        {
+            "text": "Какво означава съкращението DOM?",
+            "answers": [
+                {
+                    "text": "Dominican Republic",
+                    "correct": false
+                },
+                {
+                    "text": "Disk on Module",
+                    "correct": false
+                },
+                {
+                    "text": "Document Object Model",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "text": "Какво представлява DOM?",
+            "answers": [
+                {
+                    "text": "Дървовидна йерархична структура",
+                    "correct": true
+                },
+                {
+                    "text": "\"Плосък\" списък с елементи",
+                    "correct": false
+                },
+                {
+                    "text": "Интерпретация на HTML като обекти в браузъра",
+                    "correct": true
+                },
+                {
+                    "text": "Програмен език",
+                    "correct": false
+                },
+                {
+                    "text": "Библиотека в JavaScript",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Кое от следните действия НЕ можем да извържим чрез манипулация на DOM?",
+            "answers": [
+                {
+                    "text": "Добавяне на елемент",
+                    "correct": false
+                },
+                {
+                    "text": "Обхождане на дървото с елементи",
+                    "correct": false
+                },
+                {
+                    "text": "Промяна адреса на браузъра",
+                    "correct": true
+                },
+                {
+                    "text": "Премахване на елементи",
+                    "correct": false
+                },
+                {
+                    "text": "Достъпване и промяна на свойства на елементите",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Атрибута id на HTML елементите е уникален за всеки от тях.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Кои от изброените варианти за изпълнение на JavaScript в уеб страница са валидни:",
+            "answers": [
+                {
+                    "text": "Чрез вградената конзола на браузъра",
+                    "correct": true
+                },
+                {
+                    "text": "Чрез въвеждане в атрибут за събитие към елемент",
+                    "correct": true
+                },
+                {
+                    "text": "Чрез inline скрипт елемент в страницата",
+                    "correct": true
+                },
+                {
+                    "text": "Чрез зареждане на външен файл в страницата",
+                    "correct": true
+                },
+                {
+                    "text": "Чрез XML конфигурация",
+                    "correct": false
+                },
+                {
+                    "text": "Чрез CGI плъг-ин",
+                    "correct": false
+                },
+                {
+                    "text": "Не можем да изпълняваме код в страницата",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Атрибутите на елементите се дефинират в HTML и задават първоначални стойности на свойствата в DOM.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Каква е разлиакта при задаване на съдържание с `innerHTML` и `textContent` свойствата?",
+            "answers": [
+                {
+                    "text": "`innerHTML` ще интерпретира подаден HTML, докато `textContent` ще го изпише като статичен текст",
+                    "correct": true
+                },
+                {
+                    "text": "Няма разлика в поведението",
+                    "correct": false
+                },
+                {
+                    "text": "Подавайки HTML на `textContent` ще получим грешка при изпълнение, докато с `innerHTML` ще проработи",
+                    "correct": false
+                },
+                {
+                    "text": "Подавайки обикновен текст (вместо HTML) на `innerHTML` ще получим грешка при изпълнение, докато с `textContent` ще проработи",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Какво е предназначението на свойството `value`?",
+            "answers": [
+                {
+                    "text": "Прочитане на вход, въведен от потребителя в `<input>` поле",
+                    "correct": true
+                },
+                {
+                    "text": "Достъп до текстовото съдържание на статични елементи",
+                    "correct": false
+                },
+                {
+                    "text": "Промяна на HTML съдържанието на елемент",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Възможно е да има повече от един елемент с едно и също `id` на страницата",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": false
+                },
+                {
+                    "text": "Невярно",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Какъв вид колекция ще върне метода `document.getElementsByClassName`?",
+            "answers": [
+                {
+                    "text": "\"Жива\" колекция HTMLCollection",
+                    "correct": true
+                },
+                {
+                    "text": "Статичен NodeList",
+                    "correct": false
+                },
+                {
+                    "text": "Масив",
+                    "correct": false
+                },
+                {
+                    "text": "Асоциативен масив",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Какво е поведението на `querySelector` ако на страницата има повече от едно съвпадение?",
+            "answers": [
+                {
+                    "text": "Връща първото съвпадение",
+                    "correct": true
+                },
+                {
+                    "text": "Връща колекция от всички съвпадения",
+                    "correct": false
+                },
+                {
+                    "text": "Хвърля грешка",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Кой от изброените селектори ще хване елемент с клас content?",
+            "answers": [
+                {
+                    "text": "`.content`",
+                    "correct": true
+                },
+                {
+                    "text": "`#content`",
+                    "correct": false
+                },
+                {
+                    "text": "`content`",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "HTMLCollection и NodeList НЕ СА масивни, но те могат:",
+            "answers": [
+                {
+                    "text": "да бъдат индексирани чрез `[]`",
+                    "correct": true
+                },
+                {
+                    "text": "да бъдат обхождани с `for-of`",
+                    "correct": true
+                },
+                {
+                    "text": "да бъдат трансформирани чрез `map` и `reduce`",
+                    "correct": false
+                },
+                {
+                    "text": "да бъдат редактирани с `push` и `pop`",
+                    "correct": false
+                },
+                {
+                    "text": "да бъдат обхождани с `for-in`",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "Колекцията `children` на елемента  е \"жива\" и се самообновява при промяна на DOM дръвото",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        }
+    ]
+}

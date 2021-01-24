@@ -2,6 +2,13 @@ body {
     background-color: #eeeeee;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -107,4 +114,11 @@ li {
 .list {
     margin-left: 0;
     display: block;
+}
+
+@media screen and (min-width: 600px) {
+    main {
+        max-width: 600px;
+        margin: auto;
+    }
 }

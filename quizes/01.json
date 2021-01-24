@@ -221,7 +221,7 @@
             "answers": [
                 {
                     "text": "`typeof`",
-                    "correct": false
+                    "correct": true
                 },
                 {
                     "text": "`instanceof`",
