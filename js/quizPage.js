@@ -7,9 +7,9 @@ export default async function quizPage({ params: { id } }) {
 
     const input = {
         questions: html`
-        <div>
+        <ol>
             ${quiz.questions.map(quizQuestion)}
-        </div>`,
+        </ol>`,
         button: html`<button className="validate-btn" onClick=${validate}>Изпрати отговори</button>`
     };
 
@@ -45,7 +45,7 @@ function quizQuestion(question, index) {
 
     const e = html`
         <div className="question">
-            <h3>${parseToElement(question.text)}</h3>
+            <li><h3>${parseToElement(question.text)}</h3></li>
             ${multi ? html`<span className="subtle">(изберете всички подходящи отговори)</span>` : ''}
             ${input.answers}
         </div>

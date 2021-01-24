@@ -10,6 +10,7 @@ window.onload = async () => {
 
     page('/', render(catalog));
     page('/maker', render(quizMaker));
+    page('/maker/:id', render(quizMaker));
     page('/:id', render(quizPage));
 
     page.start();

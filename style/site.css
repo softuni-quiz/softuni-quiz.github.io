@@ -80,7 +80,7 @@ h1 {
 
 .question-form textarea {
     display: block;
-    width: 400px;
+    width: 450px;
 }
 
 .nav {
@@ -102,13 +102,21 @@ h1 {
     color: black;
 }
 
-ul {
+ul, ol {
     padding: 0;
     margin: 0;
 }
 
-li {
+ul li {
     list-style: none;
+}
+
+ol {
+    list-style-position: inside;
+}
+
+ol li h3 {
+    display: inline;
 }
 
 .list {
@@ -116,9 +124,18 @@ li {
     display: block;
 }
 
-@media screen and (min-width: 600px) {
+.order-setting {
+    float: right;
+}
+
+.quiz-title {
+    width: 400px;
+    font-size: 18px;
+}
+
+@media screen and (min-width: 720px) {
     main {
-        max-width: 600px;
+        max-width: 720px;
         margin: auto;
     }
 }
