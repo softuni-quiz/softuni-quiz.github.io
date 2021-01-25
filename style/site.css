@@ -61,6 +61,16 @@ h1 {
     font-size: 85%;
 }
 
+.codeBlock {
+    display: block;
+    font-family: Consolas, 'Courier New', monospace;
+    font-weight: normal;
+    border-radius: 6px;
+    background-color: #eeeeee;
+    padding: 2px 4px;
+    font-size: 85%;
+}
+
 .correct {
     background-color: rgb(153, 229, 183);
 }

@@ -1,0 +1,213 @@
+{
+    "name": "DOM Manipulation and Events",
+    "questions": [
+        {
+            "text": "Функцията `document.createElement()` служи за:",
+            "answers": [
+                {
+                    "text": "Създаване на нов HTML елемент",
+                    "correct": true
+                },
+                {
+                    "text": "Закачане на съществуващ елемент към DOM дървото",
+                    "correct": false
+                },
+                {
+                    "text": "Създаване на нов документ",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Кой метод служи за закачане на нов елемент към избрания клон (елемент) на DOM дървото?",
+            "answers": [
+                {
+                    "text": "`appendChild()`",
+                    "correct": true
+                },
+                {
+                    "text": "`addElement()`",
+                    "correct": false
+                },
+                {
+                    "text": "`new Element()`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Новосъздадените елементи не са част от DOM дървото и трябва да се добавят ръчно, за да станат видими",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Какъв ще е резулата от изпълнението на следния код:\n```\nconst divElement = document.createElement('div');\nconst spanElement = document.createElement('span');\ndivElement.appendChild(spanElement);\n```",
+            "answers": [
+                {
+                    "text": "`divElement` ще стане под-елемент на `spanElement`",
+                    "correct": false
+                },
+                {
+                    "text": "`spanElement` ще стане под-елемент на `divElement`",
+                    "correct": true
+                },
+                {
+                    "text": "Грешка при изпълнение",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво представляват събитията в DOM?",
+            "answers": [
+                {
+                    "text": "Индикация за действие от страна на потребителя",
+                    "correct": true
+                },
+                {
+                    "text": "Вид HTML елементи",
+                    "correct": false
+                },
+                {
+                    "text": "Специална страница в уебсайт",
+                    "correct": false
+                },
+                {
+                    "text": "Вид интерактивно уеб-проложение",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Кои са начините за добавяне на слушател за събитие?",
+            "answers": [
+                {
+                    "text": "Чрез HTML атрибут на елемента",
+                    "correct": true
+                },
+                {
+                    "text": "Чрез присвояване на свойство на DOM елемента",
+                    "correct": true
+                },
+                {
+                    "text": "Чрез метод `addEventListener` на елемента",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво е предназначението на първия аргумент на метода `addEventListener`?",
+            "answers": [
+                {
+                    "text": "Вид събитие, за което да слуша",
+                    "correct": true
+                },
+                {
+                    "text": "Функция, което да обработи възникналото събитие",
+                    "correct": false
+                },
+                {
+                    "text": "Обект с опции на слушателя",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Каква информация можем да открием в обекта за click-събитие, което слушателя получава като параметър?",
+            "answers": [
+                {
+                    "text": "Източника на събитието",
+                    "correct": true
+                },
+                {
+                    "text": "Координати, на които е възникнало събитието",
+                    "correct": true
+                },
+                {
+                    "text": "Адреса на страницата",
+                    "correct": false
+                },
+                {
+                    "text": "Размера на екрана на потребителя",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Можем да добавим повече от един слушател за едно и също събитие в един елемент.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Какъв е реда на получаване на събитие по време на bubbling фазата?",
+            "answers": [
+                {
+                    "text": "От източника към корена на DOM дървото",
+                    "correct": true
+                },
+                {
+                    "text": "От корена на DOM дървото към източника",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какви са предимствата на делегирането на събития?",
+            "answers": [
+                {
+                    "text": "Можем да обработим събития от множество източници с добавяне на един слушател",
+                    "correct": true
+                },
+                {
+                    "text": "Използваме една и съща фунцкия-слушател за множество различни събития",
+                    "correct": false
+                },
+                {
+                    "text": "Получаваме повече свободно време да се концентрираме върху управленски решения",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "В коя фаза на улавяне може да се случи делегирането на събития?",
+            "answers": [
+                {
+                    "text": "Bubbling",
+                    "correct": true
+                },
+                {
+                    "text": "Capturing",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        }
+    ]
+}

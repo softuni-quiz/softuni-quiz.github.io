@@ -1,5 +1,6 @@
 import { getQuiz } from './data.js';
 import html from './dom.js';
+import { parseToElements } from './parser.js';
 
 
 export default async function quizPage({ params: { id } }) {
@@ -43,9 +44,11 @@ function quizQuestion(question, index) {
         </div>`
     };
 
+    const container = html`<h3></h3>`;
+    container.innerHTML = parseToElements(question.text);
     const e = html`
         <div className="question">
-            <li><h3>${parseToElement(question.text)}</h3></li>
+            <li>${container}</li>
             ${multi ? html`<span className="subtle">(изберете всички подходящи отговори)</span>` : ''}
             ${input.answers}
         </div>
@@ -70,10 +73,12 @@ function quizQuestion(question, index) {
 function quizAnswer(answer, index, questionIndex, multi = false) {
     const inputType = multi ? 'checkbox' : 'radio';
 
+    const container = html`<span></span>`;
+    container.innerHTML = parseToElements(answer.text);
     const e = html`
         <label className="answer">
             <input name=${'question' + questionIndex} type=${inputType} value=${index} />
-            <span>${parseToElement(answer.text)}</span>
+            ${container}
         </label>`;
     e.validate = validate;
 
@@ -99,36 +104,4 @@ function quizAnswer(answer, index, questionIndex, multi = false) {
             }
         }
     }
-}
-
-function parseToElement(text) {
-    //text = text.replace(/[<>&]/gi, sanitize);
-    const tokens = text.split('`');
-
-    if (tokens.length > 1) {
-        const result = [];
-
-        let open = false;
-        for (let token of tokens) {
-            if (!open) {
-                result.push(token);
-                open = true;
-            } else {
-                result.push(html`<span className="code">${token}</span>`);
-                open = false;
-            }
-        }
-
-        return html`<span className="answer-text">${result}</span>`;
-    }
-
-    return text;
-}
-
-function sanitize(match) {
-    return {
-        '<': '&lt;',
-        '>': '&gt;',
-        '&': '&amp;'
-    }[match];
 }

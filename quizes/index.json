@@ -14,5 +14,9 @@
     {
         "name": "DOM Introduction",
         "id": "04"
+    },
+    {
+        "name": "DOM Manipulation and Events",
+        "id": "05"
     }
 ]
