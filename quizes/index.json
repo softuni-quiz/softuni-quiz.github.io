@@ -18,5 +18,9 @@
     {
         "name": "DOM Manipulation and Events",
         "id": "05"
+    },
+    {
+        "name": "Advanced Functions",
+        "id": "06"
     }
 ]

@@ -1,12 +1,30 @@
-import html from './dom.js';
-
-
 const tags = {
     '`': token => `<span className="code">${token}</span>`,
     '```': token => `<span className="codeBlock">${token}</span>`,
 };
 const tagIndex = Object.keys(tags);
 const tagMax = tagIndex.reduce((max, c) => Math.max(max, c.length), 0);
+
+const keywords = [
+    'function',
+    'let',
+    'const',
+    'var',
+    'return',
+    'new',
+    'true',
+    'false',
+    'if',
+    'else',
+    'while',
+    'do',
+    'switch',
+    'break',
+    'for',
+    'in',
+    'of',
+    '=>'
+];
 
 function read(text) {
     let offset = 0;
@@ -101,13 +119,58 @@ function parse(text) {
 }
 
 export function parseToElements(text) {
+    return createTokens(text)
+        .map(t => t.type == 'text' ? parseTextNode(t.token) : createBlock(t.token))
+        .join('');
+}
+
+function parseTextNode(text) {
     return text
-        .replace(/```([^`]+)```/gi, (match, token) => `<span class="codeBlock">${token}</span>`)
         .replace(/`([^`]+)`/gi, (match, token) => `<span class="code">${token}</span>`)
         .split('\n')
-        .map(t => t.trim())
         .filter(t => t != '')
         .join('<br />');
+}
+
+function createTokens(text) {
+    const result = [];
+
+    const tokens = text.split('```');
+
+    let open = false;
+    for (let token of tokens) {
+        if (!open) {
+            result.push({
+                type: 'text',
+                token
+            });
+            open = true;
+        } else {
+            result.push({
+                type: 'block',
+                token
+            });
+            open = false;
+        }
+    }
+    return result;
+}
+
+function createBlock(text) {
+    text = text.trim().split('\n');
+
+    const result = ['<ol class="code codeBlock">'];
+
+    for (let token of text) {
+        token = token
+            .replace(/ /g, '&nbsp;')
+            .replace(/(?:\b)(\w+)(?:\b)/gm, (match, token) => keywords.includes(token) ? `<span class="keyword">${token}</span>` : token);
+        result.push(`<li class="blockLine">${token}</li>`);
+    }
+
+    result.push('</ol>');
+
+    return result.join('');
 }
 
 export function sanitize(match) {

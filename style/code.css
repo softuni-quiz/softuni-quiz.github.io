@@ -1,0 +1,29 @@
+.var {
+    font-family: Consolas, 'Courier New', monospace;
+}
+
+.code {
+    font-family: Consolas, 'Courier New', monospace;
+    font-weight: normal;
+    border-radius: 6px;
+    background-color: #eeeeee;
+    padding: 2px 4px;
+    font-size: 85%;
+}
+
+.codeBlock {
+    list-style-position: outside;
+    background: linear-gradient(to right, rgb(194, 229, 208) 0, rgb(194, 229, 208) 2.5em, #eee 2.5em);
+}
+
+.keyword {
+    color: rgb(0, 121, 202);
+}
+
+.codeBlock li {
+    margin-left: 2.5em;
+}
+
+.codeBlock li::marker {
+    color: #777777;
+}

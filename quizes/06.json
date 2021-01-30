@@ -1,0 +1,297 @@
+{
+    "name": "Advanced Functions",
+    "questions": [
+        {
+            "text": "Как можем да достъпим контекста на изпълнение на дадена функция?",
+            "answers": [
+                {
+                    "text": "Чрез `this`",
+                    "correct": true
+                },
+                {
+                    "text": "Чрез `that`",
+                    "correct": false
+                },
+                {
+                    "text": "Чрез `arguments`",
+                    "correct": false
+                },
+                {
+                    "text": "Чрез `prototype`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Arrow-функциите запазват контекста на изпълнение, в който са декларирани, независимо от къде се изпълняват.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Отбележете вариантите за контекст на изпълнение:",
+            "answers": [
+                {
+                    "text": "Глобално изпълнение",
+                    "correct": true
+                },
+                {
+                    "text": "Като метод на обект",
+                    "correct": true
+                },
+                {
+                    "text": "Като слушател на събитие в DOM",
+                    "correct": true
+                },
+                {
+                    "text": "Overload на фунцкия",
+                    "correct": false
+                },
+                {
+                    "text": "Като виртуален метод",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "КОй метод за посочване на контекста на изпълнение приема аргументите като масив?",
+            "answers": [
+                {
+                    "text": "`call()`",
+                    "correct": false
+                },
+                {
+                    "text": "`apply()`",
+                    "correct": true
+                },
+                {
+                    "text": "`bind()`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Как се подават аргументите чрез метода `call()`?",
+            "answers": [
+                {
+                    "text": "Като масив",
+                    "correct": false
+                },
+                {
+                    "text": "Като отделни елементи",
+                    "correct": true
+                },
+                {
+                    "text": "Като JSON",
+                    "correct": false
+                },
+                {
+                    "text": "Не можем да подаваме аргументи",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Функциите като първокласни елементи на езика означава:",
+            "answers": [
+                {
+                    "text": "Можем да ги третираме като стойности",
+                    "correct": true
+                },
+                {
+                    "text": "Приемат само един аргумент",
+                    "correct": false
+                },
+                {
+                    "text": "Винаги връщат стойност",
+                    "correct": false
+                },
+                {
+                    "text": "Можем да ги заменим с резултата от тяхното изпълнение",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Функциите могат да връщат като резултат други функции.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Кой термин отговяра на определението \"Функция, която приема като аргумент друга функция, или връща като резултат друга функция\"?",
+            "answers": [
+                {
+                    "text": "Функция от по-висок ред",
+                    "correct": true
+                },
+                {
+                    "text": "Функкция на втора степен",
+                    "correct": false
+                },
+                {
+                    "text": "Сложна функция",
+                    "correct": false
+                },
+                {
+                    "text": "Не съществува еквивалент в JavaScript",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Кои са свойствата на \"чистите\" функции (pure functions)?",
+            "answers": [
+                {
+                    "text": "При едни и същи аргументи връщат еднакъв резултат",
+                    "correct": true
+                },
+                {
+                    "text": "Нямат странични ефекти",
+                    "correct": true
+                },
+                {
+                    "text": "Не съдържат променливи",
+                    "correct": false
+                },
+                {
+                    "text": "Не са част от обект",
+                    "correct": false
+                },
+                {
+                    "text": "Част са от обект",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Как наричаме свойството на вложена функция да вижда обхвата (scope), в който е декларирана?",
+            "answers": [
+                {
+                    "text": "Closure",
+                    "correct": true
+                },
+                {
+                    "text": "Dereference",
+                    "correct": false
+                },
+                {
+                    "text": "Inheritance",
+                    "correct": false
+                },
+                {
+                    "text": "Overloading",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какъв ще е резултата от изпълнението на следния код:\n```\nfunction outer() {\n  let a = 5;\n  \n  function innerA() { a = 6; }\n  function innerB() { console.log(a); }\n\n  return { innerA, innerB };\n}\n\nconst result = outer();\nresult.innerA();\nresult.innerB();\n```",
+            "answers": [
+                {
+                    "text": "Числото 6 в конзолата",
+                    "correct": true
+                },
+                {
+                    "text": "Числото 5 в конзолата",
+                    "correct": false
+                },
+                {
+                    "text": "undefined в конзолата",
+                    "correct": false
+                },
+                {
+                    "text": "Грешка при изпълнение",
+                    "correct": false
+                },
+                {
+                    "text": "Грешка при компилация",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Как наричаме следния израз:\n```\n(function() => {\n  let name = 'Peter';\n  return name;\n})();\n```",
+            "answers": [
+                {
+                    "text": "IIFE",
+                    "correct": true
+                },
+                {
+                    "text": "Closure",
+                    "correct": false
+                },
+                {
+                    "text": "Higher-order function",
+                    "correct": false
+                },
+                {
+                    "text": "Predicate",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "На кой ред се извършва частично прилагане (partial application) на аргументи:\n```\nconst person = { name: 'Peter' };\n\nfunction sayHi() {\n  console.log(this.name + ' says hi');\n}\n\nfunction sum(a, b)  {\n  return a + b;\n}\n\nconst increment = sum.bind(null, 1);\nconst greet = sayHi.bind(person);\n```",
+            "answers": [
+                {
+                    "text": "1",
+                    "correct": false
+                },
+                {
+                    "text": "7-9",
+                    "correct": false
+                },
+                {
+                    "text": "11",
+                    "correct": true
+                },
+                {
+                    "text": "12",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Currying и Partial Application са едно и също нещо.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": false
+                },
+                {
+                    "text": "Невярно",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        }
+    ]
+}
