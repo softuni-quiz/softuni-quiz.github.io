@@ -16,7 +16,8 @@
                     "text": "линеен",
                     "correct": false
                 }
-            ]
+            ],
+            "dontRandomize": false
         },
         {
             "text": "Кой е индекса на първия елемент в масив?",
@@ -27,7 +28,7 @@
                 },
                 {
                     "text": "0",
-                    "correct": false
+                    "correct": true
                 },
                 {
                     "text": "1",
@@ -55,7 +56,8 @@
                     "text": "`const myArr = number[]{1, 2, 3}`",
                     "correct": false
                 }
-            ]
+            ],
+            "dontRandomize": false
         },
         {
             "text": "Достъпването на невалиден индекс хвърля грешка.",
@@ -100,7 +102,8 @@
                     "text": "`...`",
                     "correct": true
                 }
-            ]
+            ],
+            "dontRandomize": false
         },
         {
             "text": "Методите `push` и `pop` на масива му дават възможност да работи като стек.",
@@ -135,7 +138,8 @@
                     "text": "Добавя елемент в края на масива",
                     "correct": false
                 }
-            ]
+            ],
+            "dontRandomize": false
         },
         {
             "text": "Какво е поведението на `sort()` ако не подадем сравняваща функция?",
@@ -156,7 +160,8 @@
                     "text": "Хвърля грешка",
                     "correct": false
                 }
-            ]
+            ],
+            "dontRandomize": false
         },
         {
             "text": "Ако не получи аргумент, метода `slice()` прави плитко копие на масива.",
@@ -177,7 +182,7 @@
             "answers": [
                 {
                     "text": "Акумулатор",
-                    "correct": false
+                    "correct": true
                 },
                 {
                     "text": "Итератор",
@@ -187,7 +192,8 @@
                     "text": "Редуктор",
                     "correct": false
                 }
-            ]
+            ],
+            "dontRandomize": false
         },
         {
             "text": "Как се нарича масив, чиито елементи са масиви с еднавка дължина?",
@@ -206,9 +212,10 @@
                 },
                 {
                     "text": "Матрица",
-                    "correct": false
+                    "correct": true
                 }
-            ]
+            ],
+            "dontRandomize": false
         }
     ]
 }
