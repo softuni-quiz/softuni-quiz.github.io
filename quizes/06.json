@@ -210,7 +210,7 @@
             "dontRandomize": false
         },
         {
-            "text": "Какъв ще е резултата от изпълнението на следния код:\n```\nfunction outer() {\n  let a = 5;\n  \n  function innerA() { a = 6; }\n  function innerB() { console.log(a); }\n\n  return { innerA, innerB };\n}\n\nconst result = outer();\nresult.innerA();\nresult.innerB();\n```",
+            "text": "Какъв ще е резултата от изпълнението на следния код:\n```\nfunction outer() {\n  let a = 5;\n  \n  function innerA() {\n    a = 6;\n  }\n  function innerB() {\n    console.log(a);\n  }\n\n  return {\n    innerA,\n    innerB\n  };\n}\n\nconst result = outer();\nresult.innerA();\nresult.innerB();\n```",
             "answers": [
                 {
                     "text": "Числото 6 в конзолата",

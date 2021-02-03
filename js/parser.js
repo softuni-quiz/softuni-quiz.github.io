@@ -163,7 +163,7 @@ function createBlock(text) {
 
     for (let token of text) {
         token = token
-            .replace(/ /g, '&nbsp;')
+            .replace(/^ +/g, (match) => '&nbsp;'.repeat(match.length))
             .replace(/(?:\b)(\w+)(?:\b)/gm, (match, token) => keywords.includes(token) ? `<span class="keyword">${token}</span>` : token);
         result.push(`<li class="blockLine">${token}</li>`);
     }
