@@ -1,0 +1,193 @@
+{
+    "name": "Unit Testing and Error Handling",
+    "questions": [
+        {
+            "text": "Според основните принципи за управление на грешките, една функция може да направи едното от:",
+            "answers": [
+                {
+                    "text": "Да извърши операцията, която името ѝ подсказва",
+                    "correct": true
+                },
+                {
+                    "text": "Да посочи че е възникнал проблем",
+                    "correct": true
+                },
+                {
+                    "text": "Да върне `undefined`",
+                    "correct": false
+                },
+                {
+                    "text": "Да спре да работи тихомълком",
+                    "correct": false
+                },
+                {
+                    "text": "Да прекрати изпълнението на програмата",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Грешките, възникнали по време на изпълнение на програмата, които водят до нейното прекратяване, се наричат:",
+            "answers": [
+                {
+                    "text": "Syntax Errors",
+                    "correct": false
+                },
+                {
+                    "text": "Runtime Errors",
+                    "correct": true
+                },
+                {
+                    "text": "Logical Errors",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво представляват логическите грешки в програмирането?",
+            "answers": [
+                {
+                    "text": "Грешки, които позволяват нормално изпълнение на програмата, но водят до неверен резултат",
+                    "correct": true
+                },
+                {
+                    "text": "Грешки в синтаксиса или записа на програмния код",
+                    "correct": false
+                },
+                {
+                    "text": "Грешки, които водят до прекратяване на програмата по време на изпълнение",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Изберете коректния синтакс за липсващия ред 4:\n```\ntry {\n  const data = await fetch(apiUrl);\n  updateView(data);\n...\n  console.error(err);\n  page.redirect('/errorPage');\n}\n```",
+            "answers": [
+                {
+                    "text": "`} catch (err) {`",
+                    "correct": true
+                },
+                {
+                    "text": "`} catch {`",
+                    "correct": false
+                },
+                {
+                    "text": "`} finally {`",
+                    "correct": false
+                },
+                {
+                    "text": "`} throw (err) {`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Unit Test наричаме:",
+            "answers": [
+                {
+                    "text": "Програмен код, който проверява дали дадена функционалност работи коректно",
+                    "correct": true
+                },
+                {
+                    "text": "Тест за прецизност на мерни единици",
+                    "correct": false
+                },
+                {
+                    "text": "Условна конструкция за улавяне на грешки",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Когато по-голямата част от функционалността на дадено приложение е покрита от автоматизирани тестове, разполагаме с автоматизиран начин да открием логически грешки.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "За какво служи пръвия параметър на основната функция в Mocha `describe`?",
+            "answers": [
+                {
+                    "text": "Име на групата от тестове",
+                    "correct": true
+                },
+                {
+                    "text": "Съобщение, което да се покаже при неуспешен тест",
+                    "correct": false
+                },
+                {
+                    "text": "Тестова функция",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво е предназначението на assertion библиотеките, каквато е напр. Chai?",
+            "answers": [
+                {
+                    "text": "Дават удобен синтакс за проверка на резултат",
+                    "correct": true
+                },
+                {
+                    "text": "Изпълняват нашите тестове",
+                    "correct": false
+                },
+                {
+                    "text": "Проверяват синтактични грешки докато пишем код",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво прави следния код:\n```\nit('returns a NaN with strings', () => {\n  expect(myFunc('a')).to.be.NaN;\n});\n```",
+            "answers": [
+                {
+                    "text": "Проверява дали функцията `myFunc` връща очаквания резултат при определен вид параметър",
+                    "correct": true
+                },
+                {
+                    "text": "Проверява дали функцията `myFunc` работи коректно при подадена стойност `NaN`",
+                    "correct": false
+                },
+                {
+                    "text": "Проверява дали функцията `myFunc` хвърля грешка при подаден string-параметър",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Каква е основната последователност при подхода Test-Driven Development?",
+            "answers": [
+                {
+                    "text": "Създаване на тест -> Теста НЕ минава успешно -> Писане на достатъчно код, за да мине теста успешно",
+                    "correct": true
+                },
+                {
+                    "text": "Писане на код -> Създаване на тест -> Теста минава успешно",
+                    "correct": false
+                },
+                {
+                    "text": "Писане на код -> Кода не се компилира -> Коригиране на кода, така че да се компилира",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        }
+    ]
+}

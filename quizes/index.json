@@ -22,5 +22,13 @@
     {
         "name": "Advanced Functions",
         "id": "06"
+    },
+    {
+        "name": "Unit Testing and Error Handling",
+        "id": "07"
+    },
+    {
+        "name": "Classes and Attributes",
+        "id": "08"
     }
 ]

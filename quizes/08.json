@@ -1,0 +1,273 @@
+{
+    "name": "Classes and Attributes",
+    "questions": [
+        {
+            "text": "Класовете в JavaScript позволяват дефиниране на:",
+            "answers": [
+                {
+                    "text": "Данни под формата на свойства",
+                    "correct": true
+                },
+                {
+                    "text": "Поведение под формат на методи",
+                    "correct": true
+                },
+                {
+                    "text": "Дали даден член на класа е публичен",
+                    "correct": false
+                },
+                {
+                    "text": "Зависимости, от които се нуждае, за да функционира правилно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Декларациите на класове се hoist-ват.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": false
+                },
+                {
+                    "text": "Невярно",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Коя е ключовата дума за деклариране на клас?",
+            "answers": [
+                {
+                    "text": "class",
+                    "correct": true
+                },
+                {
+                    "text": "struct",
+                    "correct": false
+                },
+                {
+                    "text": "typedef",
+                    "correct": false
+                },
+                {
+                    "text": "object",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Как се изпълнява конструктора на клас?",
+            "answers": [
+                {
+                    "text": "С извикване на класа чрез оператора new",
+                    "correct": true
+                },
+                {
+                    "text": "Като статичен метод на класа",
+                    "correct": false
+                },
+                {
+                    "text": "Не се изпълнява - той е абстрактен метод",
+                    "correct": false
+                },
+                {
+                    "text": "Не се изпълнява - той е частен метод",
+                    "correct": false
+                },
+                {
+                    "text": "С използване на `call` или `apply`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "За какво служи ключовата дума `this` в класа?",
+            "answers": [
+                {
+                    "text": "За достъпване свойствата на инстанцията",
+                    "correct": true
+                },
+                {
+                    "text": "За достпване на статичните методи",
+                    "correct": false
+                },
+                {
+                    "text": "За създаване на нови инстанции",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Кой е оператора за проверка дали даден обект е инстанция на определен клас?",
+            "answers": [
+                {
+                    "text": "instanceof",
+                    "correct": true
+                },
+                {
+                    "text": "typeof",
+                    "correct": false
+                },
+                {
+                    "text": "is",
+                    "correct": false
+                },
+                {
+                    "text": "extends",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво е характерно за статичните методи на клас?",
+            "answers": [
+                {
+                    "text": "Те са достъпни само чрез идентификатора (декларацията) на класа и не могат да се достъпят от неговите инстанции",
+                    "correct": true
+                },
+                {
+                    "text": "Те са достъпни само за инстанциите на класа и не могат да се достъпят чрез неговия идентификатор (декларация)",
+                    "correct": false
+                },
+                {
+                    "text": "Те са едновременно достъпни чрез идентификатора на класа и в неговите инстанции",
+                    "correct": false
+                },
+                {
+                    "text": "Те не са публично достъптни",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво е поведението на свойство, което има getter, но няма setter?",
+            "answers": [
+                {
+                    "text": "То е read-only - може да бъде прочетено, не не може да бъде променено",
+                    "correct": true
+                },
+                {
+                    "text": "То не е публично достъпно",
+                    "correct": false
+                },
+                {
+                    "text": "То може да бъде променено, но не може да бъде прочетено",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Accessor-методите могат да се използват за валидация на стойностите.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "На кой ред в следната декларация на клас има допусната грешка:\n```\nclass Circle{\n  constructor(r) {\n    this.r = r;\n  }\n\n  get r() {\n    return this._r;\n  }\n\n  set r(value) {\n    if (typeof r != 'number') {\n      throw new TypeError('Expected number');\n    }\n    this.r = value;\n  }\n}\n```",
+            "answers": [
+                {
+                    "text": "1",
+                    "correct": false
+                },
+                {
+                    "text": "2-4",
+                    "correct": false
+                },
+                {
+                    "text": "6",
+                    "correct": false
+                },
+                {
+                    "text": "14",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Методите `add` и `remove` на свойството `classList` в DOM-елемнтите позволяват:",
+            "answers": [
+                {
+                    "text": "Удобен начин за добавяне и премахване на CSS-класове към елемента",
+                    "correct": true
+                },
+                {
+                    "text": "Регистриране и отписане на собствени HTML елементи",
+                    "correct": false
+                },
+                {
+                    "text": "Добавяне и премахване на слушатели за събития върху елемента",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Имената и стойностите на атрибутите, дефинирани чрез `dataset` могат да бъдат произволни.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Каква е основната разлика между инстанциите на класа Map и обикновените обекти, в качеството им на асоциативни масиви?",
+            "answers": [
+                {
+                    "text": "При Map можем да използваме всякакъв тип данни за ключ, докато при обект - само string",
+                    "correct": true
+                },
+                {
+                    "text": "Не можем да премахваме а елементи от обекта, докато при Map можем",
+                    "correct": false
+                },
+                {
+                    "text": "В обекта ключовете трябва да са уникални, докато при Map можем да имаме повторения",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво е характерно за колекциите WeakMap и WeakSet?",
+            "answers": [
+                {
+                    "text": "Елементите в тях не се броят за активни референции от garbage-колектора",
+                    "correct": true
+                },
+                {
+                    "text": "Те не поддържат тежки референции (вложени обекти и масиви)",
+                    "correct": false
+                },
+                {
+                    "text": "Те се прилагат само когато разполагаме с много оперативна памет",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        }
+    ]
+}
