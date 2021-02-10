@@ -1,0 +1,263 @@
+{
+    "name": "Prototypes and Inheritance",
+    "questions": [
+        {
+            "text": "Коя настройката на свойствата на обект определя дали стойността на дадено свойство може да се променя?",
+            "answers": [
+                {
+                    "text": "`writable`",
+                    "correct": true
+                },
+                {
+                    "text": "`configurable`",
+                    "correct": false
+                },
+                {
+                    "text": "`value`",
+                    "correct": false
+                },
+                {
+                    "text": "`readonly`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "За какво служи нстройката enumerable на свойствата на един обект?",
+            "answers": [
+                {
+                    "text": "Определя дали свойството ще се появи при обхождане с `for...in`",
+                    "correct": true
+                },
+                {
+                    "text": "Определя дали стойността на свойството може да се променя",
+                    "correct": false
+                },
+                {
+                    "text": "Определя дали свойството има getter и setter",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "След изпълнение на следния код, ще може ли стойността на `name` да бъде променена?\n```\nconst myObj = {};\nObject.defineProperty(myObj, 'name', {\n  value: 'Peter',\n  writable: true,\n  enumerable: true,\n  configurable: false\n};\n```",
+            "answers": [
+                {
+                    "text": "Да",
+                    "correct": true
+                },
+                {
+                    "text": "Не",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Какво представлява прототипа на един обект?",
+            "answers": [
+                {
+                    "text": "Референция към друг обект",
+                    "correct": true
+                },
+                {
+                    "text": "Копие на свойства и методи",
+                    "correct": false
+                },
+                {
+                    "text": "Метод на обекта",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво се случва, когато се опитаме да достъпим свойство, което не съществува в посочения обект?",
+            "answers": [
+                {
+                    "text": "Интерпретатора търси свойството нагоре в прототипната верига на обекта",
+                    "correct": true
+                },
+                {
+                    "text": "Свойството се създава в посочения обект",
+                    "correct": false
+                },
+                {
+                    "text": "Интерпретатора връща най-близката стойност от пометта на компютъра",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Свойството `__proto__` НЕ трябва да се използва, освен ако не дебъгваме кода.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Как добавяме нови свойства и методи към прототипа на даден обект?",
+            "answers": [
+                {
+                    "text": "Чрез свойството prototype на неговия конструктор",
+                    "correct": true
+                },
+                {
+                    "text": "Чрез метода `Object.defineProperty()`",
+                    "correct": false
+                },
+                {
+                    "text": "Чрез метода `Object.assign()`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какъв ще е резултата от следния код:\n```\nfunction Device(name) {\n  this.name = name;\n}\nDevice.prototype.print = function() {\n  console.log(`${this.name} is printing a page`);\n};\n```",
+            "answers": [
+                {
+                    "text": "Всички инстанции на Device ще имат референция към една и съща версия на `print()` в паметта",
+                    "correct": true
+                },
+                {
+                    "text": "Всички инстанции на Device ще имат копие на функцията `print()`",
+                    "correct": false
+                },
+                {
+                    "text": "Функцията `print()` е статичен метод на Device",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Изберете правилната еквивалентна имплементация на следния клас, използвайки прототипна дефиниция:\n```\nclass Point {\n  constructor(x, y} {\n    this.x = x;\n    this.y = y;\n  }\n  distance(p) {\n    const dx = this.x - p.x;\n    const dy = this.y - p.y;\n    return Math.sqrt(dx ** 2 + dy ** 2);\n  }\n}\n```\n\nВариант 1:\n```\nfunction Point(x, y} {\n  this.x = x;\n  this.y = y;\n}\nPoint.prototype.distance = function(p) {\n  const dx = this.x - p.x;\n  const dy = this.y - p.y;\n  return Math.sqrt(dx ** 2 + dy ** 2);\n};\n```\n\nВариант 2:\n```\nfunction Point(x, y} {\n  this.x = x;\n  this.y = y;\n}\nPoint.distance = function(p) {\n  const dx = this.x - p.x;\n  const dy = this.y - p.y;\n  return Math.sqrt(dx ** 2 + dy ** 2);\n};\n```\n\nВариант 3:\n```\nfunction Point(x, y} {\n  this.x = x;\n  this.y = y;\n  this.distance = function(p) {\n    const dx = x - p.x;\n    const dy = y - p.y;\n    return Math.sqrt(dx ** 2 + dy ** 2);\n  }\n}\n```",
+            "answers": [
+                {
+                    "text": "Вариант 1",
+                    "correct": true
+                },
+                {
+                    "text": "Вариант 2",
+                    "correct": false
+                },
+                {
+                    "text": "Вариант 3",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Свойството `prototype` на конструктор-функцията и свойството `__proto__` на нейните инстанции са референция към едно и също нещо.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Какво е предназначението на метода `Object.create()`?",
+            "answers": [
+                {
+                    "text": "Създаванов празен обект, чиито прототип е параметъра, който сме подали",
+                    "correct": true
+                },
+                {
+                    "text": "Копира всички свойста от подадения като параметър обект",
+                    "correct": false
+                },
+                {
+                    "text": "Връща референция към прототипа на подадения обект",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Прототипа на един обект може също да има прототип.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Коя е ключовата дума за наследяване на клас в JavaScript?",
+            "answers": [
+                {
+                    "text": "`extends`",
+                    "correct": true
+                },
+                {
+                    "text": "`implements`",
+                    "correct": false
+                },
+                {
+                    "text": "`inhretits`",
+                    "correct": false
+                },
+                {
+                    "text": "`::`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво е предназначението на фунцкията `super()` в наследяващия клас?",
+            "answers": [
+                {
+                    "text": "Извиква конструктора на неговия пряк родител",
+                    "correct": true
+                },
+                {
+                    "text": "Позволява класа да бъде наследен от други класове",
+                    "correct": false
+                },
+                {
+                    "text": "Заключва свойствата на инстанциите, така че да не могат да бъдат променяни",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Наследяването в JavaScript създава копие на всички свойства методи от класа родител в наследяващия клас.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": false
+                },
+                {
+                    "text": "Невярно",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        }
+    ]
+}

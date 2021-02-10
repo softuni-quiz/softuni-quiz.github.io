@@ -30,5 +30,9 @@
     {
         "name": "Classes and Attributes",
         "id": "08"
+    },
+    {
+        "name": "Prototypes and Inheritance",
+        "id": "09"
     }
 ]
