@@ -9,6 +9,7 @@ window.onload = async () => {
     const main = document.querySelector('main');
 
     page('/', render(catalog));
+    page('/preview', render(quizPage));
     page('/maker', render(quizMaker));
     page('/maker/:id', render(quizMaker));
     page('/:id', render(quizPage));

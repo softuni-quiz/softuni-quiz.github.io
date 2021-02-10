@@ -4,7 +4,14 @@ import { parseToElements } from './parser.js';
 
 
 export default async function quizPage({ params: { id } }) {
-    const quiz = await getQuiz(id);
+    let quiz;
+    if (id != undefined) {
+        quiz = await getQuiz(id);
+    } else if (localStorage.getItem('recentQuiz') != null) {
+        quiz = JSON.parse(localStorage.getItem('recentQuiz'));
+    } else {
+        return html`<p>400 Missing quiz ID</p>`;
+    }
 
     const input = {
         questions: html`

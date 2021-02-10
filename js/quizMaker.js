@@ -16,6 +16,7 @@ export default async function quizMaker({ params: { id } }) {
         ${input.title}
         <button onClick=${downloadQuiz}>Export</button>
         <button onClick=${reset}>New</button>
+        <a href="/preview">Preview</a>
         ${input.list}
         <button onClick=${onAddClick}>Add question</button>
     </div>`;

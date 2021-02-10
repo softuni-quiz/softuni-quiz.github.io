@@ -23,7 +23,12 @@ const keywords = [
     'for',
     'in',
     'of',
-    '=>'
+    '=>',
+	'async',
+	'await',
+	'import',
+	'export',
+	'from'
 ];
 
 function read(text) {
