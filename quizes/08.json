@@ -180,7 +180,7 @@
             "dontRandomize": true
         },
         {
-            "text": "На кой ред в следната декларация на клас има допусната грешка:\n```\nclass Circle{\n  constructor(r) {\n    this.r = r;\n  }\n\n  get r() {\n    return this._r;\n  }\n\n  set r(value) {\n    if (typeof r != 'number') {\n      throw new TypeError('Expected number');\n    }\n    this.r = value;\n  }\n}\n```",
+            "text": "На кой ред в следната декларация на клас има допусната грешка:\n```\nclass Circle{\n  constructor(r) {\n    this.r = r;\n  }\n\n  get r() {\n    return this._r;\n  }\n\n  set r(value) {\n    if (typeof value != 'number') {\n      throw new TypeError('Expected number');\n    }\n    this.r = value;\n  }\n}\n```",
             "answers": [
                 {
                     "text": "1",
