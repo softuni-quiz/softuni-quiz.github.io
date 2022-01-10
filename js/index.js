@@ -6,6 +6,8 @@ import { getCategories, getQuizIndex } from './data.js';
 
 
 window.onload = async () => {
+    const categories = await getCategories();
+
     const main = document.querySelector('main');
 
     page('/index.html', '/');
@@ -21,6 +23,7 @@ window.onload = async () => {
 
     function render(component) {
         return async (ctx) => {
+            ctx.categories = categories;
             const result = await component(ctx);
             main.innerHTML = '';
             main.appendChild(result);
@@ -32,16 +35,14 @@ function quizRedirect(ctx) {
     page.redirect('/quiz/' + ctx.params.id);
 }
 
-async function catSelector() {
-    const categories = await getCategories();
-
+async function catSelector(ctx) {
     return html`
     <div>
         <h1>SoftUni Quizes</h1>
         <div className="question">
             <h2>Категории</h2>
             <ul>
-                ${categories.map(i => html`<li><a className="nav list" href=${`/category/${i.id}`}>${i.name}</a></li>`)}
+                ${ctx.categories.map(i => html`<li><a className="nav list" href=${`/category/${i.id}`}>${i.name}</a></li>`)}
             </ul>
         </div>
     </div>`;
@@ -50,12 +51,14 @@ async function catSelector() {
 async function catalog(ctx) {
     const catId = ctx.params.id;
     const list = (await getQuizIndex()).filter(q => q.category == catId);
+    const catName = ctx.categories.find(c => c.id == catId).name;
 
     return html`
     <div>
-        <h1>JS Advanced Quiz Catalog</h1>
+        <h1>${catName}</h1>
+        <a className="nav" href="/">Назад към категориите</a>
         <div className="question">
-            <p>Изберете лекция, за да отворите прилежащия тест:</p>
+            <p>Изберете тема, за да отворите прилежащия тест:</p>
             <ul>
                 ${list.map(i => html`<li><a className="nav list" href=${`/quiz/${i.id}`}>${i.name}</a></li>`)}
             </ul>

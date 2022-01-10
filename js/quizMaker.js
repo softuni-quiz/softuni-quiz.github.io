@@ -1,9 +1,7 @@
-import { getQuiz, getCategories, exportToJson } from './data.js';
+import { getQuiz, exportToJson } from './data.js';
 import html from './dom.js';
 
-export default async function quizMaker({ params: { id } }) {
-    const categories = await getCategories();
-
+export default async function quizMaker({ params: { id }, categories }) {
     const input = {
         list: html`<ol></ol>`,
         title: html`<input className="quiz-title" type="text" name="title" />`,
