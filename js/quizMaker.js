@@ -1,19 +1,24 @@
-import { getQuiz, exportToJson } from './data.js';
+import { getQuiz, getCategories, exportToJson } from './data.js';
 import html from './dom.js';
 
 export default async function quizMaker({ params: { id } }) {
+    const categories = await getCategories();
+
     const input = {
         list: html`<ol></ol>`,
-        title: html`<input className="quiz-title" type="text" />`
+        title: html`<input className="quiz-title" type="text" name="title" />`,
+        category: catSelector(categories)
     };
 
     input.list.addEventListener('input', onInput);
     input.list.addEventListener('click', onInput);
     input.title.addEventListener('input', onInput);
+    input.category.addEventListener('input', onInput);
 
     const e = html`
     <div>
         ${input.title}
+        <label>Category: ${input.category}</label>
         <button onClick=${downloadQuiz}>Export</button>
         <button onClick=${reset}>New</button>
         <a href="/preview">Preview</a>
@@ -25,6 +30,7 @@ export default async function quizMaker({ params: { id } }) {
         const quiz = await getQuiz(id);
 
         input.title.value = quiz.name;
+        input.category.value = quiz.category;
         for (let question of quiz.questions) {
             addQuestion(question);
         }
@@ -52,6 +58,7 @@ export default async function quizMaker({ params: { id } }) {
     function toJSON() {
         const data = {
             name: input.title.value,
+            category: input.category.value,
             questions: [...input.list.children].map(c => c.read())
         };
         return JSON.stringify(data, null, 2);
@@ -95,6 +102,11 @@ export default async function quizMaker({ params: { id } }) {
 }
 
 
+function catSelector(categories) {
+    return html`<select name="category">
+        ${categories.map(c => html`<option value=${c.id}>${c.name}</option>`)}
+    </select>`;
+}
 
 function questionForm(question) {
     const input = {

@@ -1,5 +1,6 @@
 {
     "name": "Objects and Composition",
+    "category": "02",
     "questions": [
         {
             "text": "Обектите в JavaScript са:",

@@ -1,5 +1,6 @@
 {
     "name": "DOM Introduction",
+    "category": "02",
     "questions": [
         {
             "text": "Какво означава съкращението DOM?",

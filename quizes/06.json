@@ -1,5 +1,6 @@
 {
     "name": "Advanced Functions",
+    "category": "02",
     "questions": [
         {
             "text": "Как можем да достъпим контекста на изпълнение на дадена функция?",

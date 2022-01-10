@@ -24,7 +24,7 @@ export default async function quizPage({ params: { id } }) {
     return html`
     <div>
         <h1>${quiz.name}</h1>
-        <a className="nav" href="/">Назад към каталога</a>
+        <a className="nav" href="/category/${quiz.category}">Назад към каталога</a>
         ${input.questions}
         ${input.button}
     </div>`;

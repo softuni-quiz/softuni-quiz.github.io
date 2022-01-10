@@ -1,3 +1,7 @@
+export async function  getCategories() {
+    return await (await fetch('/quizes/categories.json')).json();
+}
+
 export async function getQuiz(id) {
     return await (await fetch(`/quizes/${id}.json`)).json();
 }

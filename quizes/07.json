@@ -1,5 +1,6 @@
 {
     "name": "Unit Testing and Error Handling",
+    "category": "02",
     "questions": [
         {
             "text": "Според основните принципи за управление на грешките, една функция може да направи едното от:",

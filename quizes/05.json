@@ -1,5 +1,6 @@
 {
     "name": "DOM Manipulation and Events",
+    "category": "02",
     "questions": [
         {
             "text": "Функцията `document.createElement()` служи за:",

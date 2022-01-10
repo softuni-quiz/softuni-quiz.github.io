@@ -1,38 +1,47 @@
 [
     {
         "name": "Syntax, Functions and Statements",
-        "id": "01"
+        "id": "01",
+        "category": "02"
     },
     {
         "name": "Arrays and Matrices",
-        "id": "02"
+        "id": "02",
+        "category": "02"
     },
     {
         "name": "Objects and Composition",
-        "id": "03"
+        "id": "03",
+        "category": "02"
     },
     {
         "name": "DOM Introduction",
-        "id": "04"
+        "id": "04",
+        "category": "02"
     },
     {
         "name": "DOM Manipulation and Events",
-        "id": "05"
+        "id": "05",
+        "category": "02"
     },
     {
         "name": "Advanced Functions",
-        "id": "06"
+        "id": "06",
+        "category": "02"
     },
     {
         "name": "Unit Testing and Error Handling",
-        "id": "07"
+        "id": "07",
+        "category": "02"
     },
     {
         "name": "Classes and Attributes",
-        "id": "08"
+        "id": "08",
+        "category": "02"
     },
     {
         "name": "Prototypes and Inheritance",
-        "id": "09"
+        "id": "09",
+        "category": "02"
     }
 ]

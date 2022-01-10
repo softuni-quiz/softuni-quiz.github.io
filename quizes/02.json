@@ -1,5 +1,6 @@
 {
     "name": "Arrays and Matrices",
+    "category": "02",
     "questions": [
         {
             "text": "Какъв тип данни са масивите в JavaScript?",
