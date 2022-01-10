@@ -3,7 +3,7 @@ import html from './dom.js';
 import { parseToElements } from './parser.js';
 
 
-export default async function quizPage({ params: { id } }) {
+export default async function quizPage({ params: { id }, query }) {
     let quiz;
     if (id != undefined) {
         quiz = await getQuiz(id);
@@ -13,10 +13,14 @@ export default async function quizPage({ params: { id } }) {
         return html`<p>400 Missing quiz ID</p>`;
     }
 
+    const from = Number(query.from) || 1;
+    const to = Number(query.to) || quiz.questions.length;
+    const questions = quiz.questions.slice(from - 1, to);
+
     const input = {
         questions: html`
-        <ol>
-            ${quiz.questions.map(quizQuestion)}
+        <ol start=${from}>
+            ${questions.map(quizQuestion)}
         </ol>`,
         button: html`<button className="validate-btn" onClick=${validate}>Изпрати отговори</button>`
     };
