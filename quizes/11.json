@@ -1,0 +1,336 @@
+{
+    "name": "Introduction to JavaScript",
+    "category": "01",
+    "questions": [
+        {
+            "text": "JavaScript може да се определи като:",
+            "answers": [
+                {
+                    "text": "Език от ниско ниво",
+                    "correct": false
+                },
+                {
+                    "text": "Език от високо ниво",
+                    "correct": true
+                },
+                {
+                    "text": "Компилиран език",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "В каква среда може да бъде изпълнен JavaScript?",
+            "answers": [
+                {
+                    "text": "Директно в браузъра",
+                    "correct": true
+                },
+                {
+                    "text": "На сървър чрез Node.js",
+                    "correct": true
+                },
+                {
+                    "text": "Вградени системи",
+                    "correct": false
+                },
+                {
+                    "text": "Аналогови водомери",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Езика JavaScript спада към групата на C-производните езици.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "За какво служи оператора `let`?",
+            "answers": [
+                {
+                    "text": "За деклариране на променлива",
+                    "correct": true
+                },
+                {
+                    "text": "За дефиниране на условна конструкция",
+                    "correct": false
+                },
+                {
+                    "text": "За промяна стойността на съществуваща променлива",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Коя е ключовата дума за деклариране на функция?",
+            "answers": [
+                {
+                    "text": "`void`",
+                    "correct": false
+                },
+                {
+                    "text": "`proc`",
+                    "correct": false
+                },
+                {
+                    "text": "`method`",
+                    "correct": false
+                },
+                {
+                    "text": "`function`",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "За какво служи символа backtick (`) при декларирането на низ (string)?",
+            "answers": [
+                {
+                    "text": "За създаване на интерполиран низ",
+                    "correct": true
+                },
+                {
+                    "text": "За създаване на обикновен низ",
+                    "correct": false
+                },
+                {
+                    "text": "За ескейпване на контролни символи",
+                    "correct": false
+                },
+                {
+                    "text": "За отваряне на конзолата",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Метода `toFixed()` връща форматиран низ при изпълняние върху число.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Кой оператор за сравнение взима предвид типа на данните?",
+            "answers": [
+                {
+                    "text": "`<=>`",
+                    "correct": false
+                },
+                {
+                    "text": "`===`",
+                    "correct": true
+                },
+                {
+                    "text": "`==`",
+                    "correct": false
+                },
+                {
+                    "text": "`!=`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какъв ще е резултата при изпълнение на следния код:\n```\nlet a = 11;\nlet b = \"11\";\nif (a == b) {\n  console.log(\"Yes\");\nelse {\n  console.log(\"No\");\n}\n```",
+            "answers": [
+                {
+                    "text": "Ще отпечата \"Yes\" в конзолата",
+                    "correct": true
+                },
+                {
+                    "text": "Ще отпечата \"No\" в конзолата",
+                    "correct": false
+                },
+                {
+                    "text": "Ще се изпълни без да отпечата нищо",
+                    "correct": false
+                },
+                {
+                    "text": "Ще даде грешка при компилация",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "В JavaScript има spaceship-оператор `<=>`",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": false
+                },
+                {
+                    "text": "Невярно",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Кои ключови думи използваме за създаване на условна конструкция?",
+            "answers": [
+                {
+                    "text": "`if-else`",
+                    "correct": true
+                },
+                {
+                    "text": "`if-then-else`",
+                    "correct": false
+                },
+                {
+                    "text": "`if-else-finally`",
+                    "correct": false
+                },
+                {
+                    "text": "`do-unless`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "С кой оператор можем да заменим поредица от свързани `if-else` конструкции, които проверяват стойността на една и съща променлива?",
+            "answers": [
+                {
+                    "text": "`switch`",
+                    "correct": true
+                },
+                {
+                    "text": "`multiplex`",
+                    "correct": false
+                },
+                {
+                    "text": "`ifs`",
+                    "correct": false
+                },
+                {
+                    "text": "`aggregate`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "За какво служи логическия оператор `!`?",
+            "answers": [
+                {
+                    "text": "Обръща значението на Булева стойност (Logical NOT)",
+                    "correct": true
+                },
+                {
+                    "text": "Логически сбор на две Булеви стойности (Logical AND)",
+                    "correct": false
+                },
+                {
+                    "text": "Ексклузивен сбор между две двоични стойности (Binary XOR)",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Как наричаме следната конструкция:\n```\nfor (let i = 1; i <= 5; i++){\n  console.log(i)\n}\n```",
+            "answers": [
+                {
+                    "text": "Цикъл",
+                    "correct": true
+                },
+                {
+                    "text": "Условна конструкция",
+                    "correct": false
+                },
+                {
+                    "text": "Блок-схема",
+                    "correct": false
+                },
+                {
+                    "text": "Функция",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Тялото на цикъл от тип `do-while` ще се изпълни поне веднъж, без значение дали условието за изпълнение е истинно.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Как наричаме нежелано или неочаквано повечедение на приложенията?",
+            "answers": [
+                {
+                    "text": "Бъг",
+                    "correct": true
+                },
+                {
+                    "text": "Своеволие",
+                    "correct": false
+                },
+                {
+                    "text": "Регресия",
+                    "correct": false
+                },
+                {
+                    "text": "Feature",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "При достигане на breakpoint, дебъгера:",
+            "answers": [
+                {
+                    "text": "ще спре временно изпълнението на приложението, за да можем да инспектираме текущия резултатт",
+                    "correct": true
+                },
+                {
+                    "text": "ще прекрати изпълнението на приложението",
+                    "correct": false
+                },
+                {
+                    "text": "ще прескочи реда код, за който се отнася breakpoint-а",
+                    "correct": false
+                },
+                {
+                    "text": "ще си вземе почивка",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        }
+    ]
+}
