@@ -5,6 +5,11 @@
         "category": "01"
     },
     {
+        "name": "Data Types and Variables",
+        "id": "12",
+        "category": "01"
+    },
+    {
         "name": "Syntax, Functions and Statements",
         "id": "01",
         "category": "02"

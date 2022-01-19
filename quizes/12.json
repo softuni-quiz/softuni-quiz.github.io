@@ -1,0 +1,272 @@
+{
+    "name": "Data Types and Variables",
+    "category": "01",
+    "questions": [
+        {
+            "text": "Данните в JavaScript нямат тип",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": false
+                },
+                {
+                    "text": "Невярно",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Кой е типа данни за управление на целочислени стойности с произволен (неограничен) размер?",
+            "answers": [
+                {
+                    "text": "BigInt",
+                    "correct": true
+                },
+                {
+                    "text": "int",
+                    "correct": false
+                },
+                {
+                    "text": "ArbitraryInt",
+                    "correct": false
+                },
+                {
+                    "text": "number",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Типа на променливите в JavaScript може да бъде променен по време на изпълнение",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Кога е подходящо използванто на `var` за деклариране на променлива?",
+            "answers": [
+                {
+                    "text": "Никога",
+                    "correct": true
+                },
+                {
+                    "text": "При по-големи приложения",
+                    "correct": false
+                },
+                {
+                    "text": "При по-малки приложения",
+                    "correct": false
+                },
+                {
+                    "text": "Винаги",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какъв ще е резултата от изпълнението на следния код:\n```\n{\n  let x = 8;\n}\nconsole.log(x); \n```",
+            "answers": [
+                {
+                    "text": "Грешка при изпълнение",
+                    "correct": true
+                },
+                {
+                    "text": "Ще се отпечата 8 в конзолата",
+                    "correct": false
+                },
+                {
+                    "text": "Ще се отпечата `undefined` в конзолата",
+                    "correct": false
+                },
+                {
+                    "text": "Ще се изпълни без да отпечатва нищо",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Кой оператор връща типа на дадена стойност?",
+            "answers": [
+                {
+                    "text": "`typeof`",
+                    "correct": true
+                },
+                {
+                    "text": "`instanceof`",
+                    "correct": false
+                },
+                {
+                    "text": "`is`",
+                    "correct": false
+                },
+                {
+                    "text": "`&&`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "На коя позиция (индекс) се намира първия символ в типа данни `string`?",
+            "answers": [
+                {
+                    "text": "-1",
+                    "correct": false
+                },
+                {
+                    "text": "0",
+                    "correct": true
+                },
+                {
+                    "text": "1",
+                    "correct": false
+                },
+                {
+                    "text": "length - 1",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Стойностите от тип `string` са immutable (непроменими).",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Какво ще отпечата на конзолата следния код:\n```\nlet name = 'Peter';\nlet age = 23;\nconsole.log(`${name} = ${age}`);\n```",
+            "answers": [
+                {
+                    "text": "Peter = 23",
+                    "correct": true
+                },
+                {
+                    "text": "${name} = ${age}",
+                    "correct": false
+                },
+                {
+                    "text": "${Peter} = ${23}",
+                    "correct": false
+                },
+                {
+                    "text": "Няма да отпечата нищо",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Колко числови типа с плаваща запетая има в JavaScript?",
+            "answers": [
+                {
+                    "text": "1",
+                    "correct": true
+                },
+                {
+                    "text": "2",
+                    "correct": false
+                },
+                {
+                    "text": "3",
+                    "correct": false
+                },
+                {
+                    "text": "4",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Операцията на кой ред ще резултира в стойност `NaN` (not-a-number)?\n```\nlet a = 5;\nlet b = 3.14;\nlet c = 'p';\nconsole.log(a + b);\nconsole.log(a + c);\nconsole.log(Number(c));\n```",
+            "answers": [
+                {
+                    "text": "4",
+                    "correct": false
+                },
+                {
+                    "text": "5",
+                    "correct": false
+                },
+                {
+                    "text": "6",
+                    "correct": false
+                },
+                {
+                    "text": "7",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Коя от следните стойности НЕ Е falsy:",
+            "answers": [
+                {
+                    "text": "`false`",
+                    "correct": false
+                },
+                {
+                    "text": "`undefined`",
+                    "correct": false
+                },
+                {
+                    "text": "0",
+                    "correct": false
+                },
+                {
+                    "text": "празен масив",
+                    "correct": true
+                },
+                {
+                    "text": "празен низ",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какъв тип ще получим чрез оператора `typeof` за променлива без зададена стойност?",
+            "answers": [
+                {
+                    "text": "`undefined`",
+                    "correct": true
+                },
+                {
+                    "text": "`null`",
+                    "correct": false
+                },
+                {
+                    "text": "`0`",
+                    "correct": false
+                },
+                {
+                    "text": "`NaN`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        }
+    ]
+}
