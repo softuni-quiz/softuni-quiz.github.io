@@ -202,6 +202,10 @@
             "text": "Операцията на кой ред ще резултира в стойност `NaN` (not-a-number)?\n```\nlet a = 5;\nlet b = 3.14;\nlet c = 'p';\nconsole.log(a + b);\nconsole.log(a + c);\nconsole.log(Number(c));\n```",
             "answers": [
                 {
+                    "text": "3",
+                    "correct": false
+                },
+                {
                     "text": "4",
                     "correct": false
                 },
@@ -211,10 +215,6 @@
                 },
                 {
                     "text": "6",
-                    "correct": false
-                },
-                {
-                    "text": "7",
                     "correct": true
                 }
             ],
