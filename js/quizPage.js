@@ -41,7 +41,15 @@ export default async function quizPage({ params: { id }, query }) {
 }
 
 function quizQuestion(question, index) {
-    const multi = question.answers.filter(a => a.correct).length > 1;
+    const type = (() => {
+        if (question.answers.length == 1) {
+            return 'open';
+        } else if (question.answers.filter(a => a.correct).length > 1) {
+            return 'multi';
+        } else {
+            return 'closed';
+        }
+    })();
 
     question.answers = question.answers.map(a => ({ a, o: Math.random() }));
     if (!question.dontRandomize) {
@@ -51,7 +59,7 @@ function quizQuestion(question, index) {
     const input = {
         answers: html`
         <div>
-            ${question.answers.map((a, i) => quizAnswer(a.a, i, index, multi))}
+            ${question.answers.map((a, i) => quizAnswer(a.a, i, index, type))}
         </div>`
     };
 
@@ -60,7 +68,8 @@ function quizQuestion(question, index) {
     const e = html`
         <div className="question">
             <li>${container}</li>
-            ${multi ? html`<span className="subtle">(изберете всички подходящи отговори)</span>` : ''}
+            ${type == 'multi' ? html`<span className="subtle">(изберете всички подходящи отговори)</span>` : ''}
+            ${type == 'open' ? html`<span className="subtle">(въведете верния отговор)</span>` : ''}
             ${input.answers}
         </div>
         `;
@@ -81,14 +90,21 @@ function quizQuestion(question, index) {
     }
 }
 
-function quizAnswer(answer, index, questionIndex, multi = false) {
-    const inputType = multi ? 'checkbox' : 'radio';
+function quizAnswer(answer, index, questionIndex, type = 'closed') {
+    const inputType = {
+        'open': 'text',
+        'multi': 'checkbox',
+        'closed': 'radio'
+    }[type];
 
+    const input = html`<input name=${'question' + questionIndex} type=${inputType} value=${type != 'open' ? index : ''} />`;
     const container = html`<span></span>`;
-    container.innerHTML = parseToElements(answer.text);
+    if (type != 'open') {
+        container.innerHTML = parseToElements(answer.text);
+    }
     const e = html`
         <label className="answer">
-            <input name=${'question' + questionIndex} type=${inputType} value=${index} />
+            ${input}
             ${container}
         </label>`;
     e.validate = validate;
@@ -98,11 +114,14 @@ function quizAnswer(answer, index, questionIndex, multi = false) {
     function validate() {
         if (answer.correct) {
             e.classList.add('correct');
-            if (e.children[0].checked) {
+            if ((type == 'open' && input.value == answer.text) || e.children[0].checked) {
                 e.classList.add('selected-correct');
                 return true;
             } else {
                 e.classList.remove('selected-correct');
+                if (type == 'open') {
+                    container.innerHTML = `Правилен отговор: ${answer.text}`;
+                }
                 return false;
             }
         } else {
