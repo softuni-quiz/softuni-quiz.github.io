@@ -168,6 +168,8 @@ function createBlock(text) {
 
     for (let token of text) {
         token = token
+            .replace(/{{{(.+)}}}/g, (match, token) => `<span class="placeholder">${'&nbsp'.repeat(Number(token))}</span>`)
+            .replace(/\/\/(.+)$/g, (match, token) => `<span class="comment">//${token}</span>`)
             .replace(/^ +/g, (match) => '&nbsp;'.repeat(match.length))
             .replace(/(?:\b)(\w+)(?:\b)/gm, (match, token) => keywords.includes(token) ? `<span class="keyword">${token}</span>` : token);
         result.push(`<li class="blockLine">${token}</li>`);

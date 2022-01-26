@@ -1,0 +1,296 @@
+{
+    "name": "Arrays",
+    "category": "01",
+    "questions": [
+        {
+            "text": "Кой е индекса на първия елемент в масив?",
+            "answers": [
+                {
+                    "text": "-1",
+                    "correct": false
+                },
+                {
+                    "text": "0",
+                    "correct": true
+                },
+                {
+                    "text": "1",
+                    "correct": false
+                },
+                {
+                    "text": "2",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Дължината на масивите в JavaScript може да се променя по време на изпълнение.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Посочете реда с правилна декларация на масив:",
+            "answers": [
+                {
+                    "text": "`let myArr = [1, 2, 3]`",
+                    "correct": true
+                },
+                {
+                    "text": "`let myArr = {1, 2, 3}`",
+                    "correct": false
+                },
+                {
+                    "text": "`let myArr = number[]{1, 2, 3}`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво съдържа свойството на масива `length`?",
+            "answers": [
+                {
+                    "text": "Броя елементи в масива",
+                    "correct": true
+                },
+                {
+                    "text": "Индекса на последния индекс в масива",
+                    "correct": false
+                },
+                {
+                    "text": "Размера на масива в паметта на компютъра в битове",
+                    "correct": false
+                },
+                {
+                    "text": "Максималния брой елементи, които могат да се добавят в масива",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Достъпването на несъществуващ индекс хвърля грешка.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": false
+                },
+                {
+                    "text": "Невярно",
+                    "correct": true
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Как се нарича оператора за достъпване на конкретен елемент в масива `[]`?",
+            "answers": [
+                {
+                    "text": "Индексиращ оператор",
+                    "correct": true
+                },
+                {
+                    "text": "Разпъващ оператор",
+                    "correct": false
+                },
+                {
+                    "text": "Итератор",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Кой метод служи за добавяне на нов елемент в края на масива?",
+            "answers": [
+                {
+                    "text": "`push`",
+                    "correct": true
+                },
+                {
+                    "text": "`pull`",
+                    "correct": false
+                },
+                {
+                    "text": "`add`",
+                    "correct": false
+                },
+                {
+                    "text": "`pop`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какво ще отпечата изпълнението на следния код:\n```\nlet arr = ['a', 'b', 'c'];\narr[4] = 'e';\n\nconsole.log(arr[3]);\n```",
+            "answers": [
+                {
+                    "text": "undefined",
+                    "correct": true
+                },
+                {
+                    "text": "c",
+                    "correct": false
+                },
+                {
+                    "text": "e",
+                    "correct": false
+                },
+                {
+                    "text": "d",
+                    "correct": false
+                },
+                {
+                    "text": "null",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Стойностите, зададени на невалиден индекс (различен от цяло неотрицателно число) в масив не променят неговата дължина.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Какъв е параметъра, който се подава на метода `join()`?",
+            "answers": [
+                {
+                    "text": "Разделител между елементите в генерирания низ",
+                    "correct": true
+                },
+                {
+                    "text": "Масив, чиито елементи да бъдат съединени",
+                    "correct": false
+                },
+                {
+                    "text": "Индекса на елемента, от който да започне съединяването",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Какъв е типа на стойността, върната от метода `includes()`?",
+            "answers": [
+                {
+                    "text": "number",
+                    "correct": false
+                },
+                {
+                    "text": "boolean",
+                    "correct": true
+                },
+                {
+                    "text": "string",
+                    "correct": false
+                },
+                {
+                    "text": "Зависи от типа на елементите в масива",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "Изберете липсващия фрагмент, с който написаната програма да отпечата в конзолата последовтелно всички елементи на масива:\n```\nlet arr = [10, 20, 30, 40];\n\nfor (let i = 0; {{{10}}}; i++) {\n  console.log(arr[i]); \n}\n// 10\n// 20\n// 30\n// 40\n```",
+            "answers": [
+                {
+                    "text": "`i < arr.length`",
+                    "correct": true
+                },
+                {
+                    "text": "`i <= arr.length`",
+                    "correct": false
+                },
+                {
+                    "text": "`i > arr.length`",
+                    "correct": false
+                },
+                {
+                    "text": "`i < arr.length - 1`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "С кой вид цикъл можем най-лесно да обходим елементите в масив?",
+            "answers": [
+                {
+                    "text": "`for-of`",
+                    "correct": true
+                },
+                {
+                    "text": "`for-in`",
+                    "correct": false
+                },
+                {
+                    "text": "`do-while`",
+                    "correct": false
+                },
+                {
+                    "text": "`for-each`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        },
+        {
+            "text": "При обхождане на масива с цикъл `for-of` нямаме пряк достъп до индексите на елементите.",
+            "answers": [
+                {
+                    "text": "Вярно",
+                    "correct": true
+                },
+                {
+                    "text": "Невярно",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": true
+        },
+        {
+            "text": "Изберете липсващия фрагмент, с който написаната програма да сумира само четните стойности в масива:\n```\nlet arr = [7, 1, 4, 3, 12];\nlet sum = 0;\n\nfor (let num of arr) {\n  if ({{{10}}}) {\n    sum += num;\n  }\n}\nconsole.log(sum);\n```",
+            "answers": [
+                {
+                    "text": "`num % 2 == 0`",
+                    "correct": true
+                },
+                {
+                    "text": "`num % 2 != 0`",
+                    "correct": false
+                },
+                {
+                    "text": "`arr[i] % 2 == 0`",
+                    "correct": false
+                },
+                {
+                    "text": "`2 % num == 0`",
+                    "correct": false
+                }
+            ],
+            "dontRandomize": false
+        }
+    ]
+}

@@ -14,7 +14,7 @@ export default async function quizMaker({ params: { id }, categories }) {
     input.category.addEventListener('input', onInput);
 
     const e = html`
-    <div>
+    <div className="quiz-maker">
         ${input.title}
         <label>Category: ${input.category}</label>
         <button onClick=${downloadQuiz}>Export</button>

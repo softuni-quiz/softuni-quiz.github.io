@@ -27,3 +27,16 @@
 .codeBlock li::marker {
     color: #777777;
 }
+
+.placeholder {
+    border: 1px solid rgb(0, 121, 202);
+    width: 100px;
+    height: 1em;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.comment {
+    font-style: italic;
+    color: #006620;
+}
