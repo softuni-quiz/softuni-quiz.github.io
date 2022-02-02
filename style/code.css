@@ -14,6 +14,10 @@
 .codeBlock {
     list-style-position: outside;
     background: linear-gradient(to right, rgb(194, 229, 208) 0, rgb(194, 229, 208) 2.5em, #eee 2.5em);
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
 }
 
 .keyword {

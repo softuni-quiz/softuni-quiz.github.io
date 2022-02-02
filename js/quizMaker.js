@@ -75,7 +75,7 @@ export default async function quizMaker({ params: { id }, categories }) {
 
     function onInput() {
         let cb = null;
-        
+
         if (timer == null) {
             store();
 
@@ -102,8 +102,8 @@ export default async function quizMaker({ params: { id }, categories }) {
 
 function catSelector(categories) {
     return html`<select name="category">
-        ${categories.map(c => html`<option value=${c.id}>${c.name}</option>`)}
-    </select>`;
+    ${categories.map(c => html`<option value=${c.id}>${c.name}</option>`)}
+</select>`;
 }
 
 function questionForm(question) {
@@ -118,7 +118,8 @@ function questionForm(question) {
         <button onClick=${remove}>X</button>
         <button onClick=${moveUp}>Up</button>
         <button onClick=${moveDown}>Down</button>
-        <label className="order-setting">Keep order ${input.dontRandomize}</label>
+        <label className="order-setting">Keep order ${input.dontRandomize}</label><br />
+        <label className="order-setting">Multiline <input onClick=${onMultiline} type="checkbox" /></label>
         <label>
             <li className="form-label">Question:</li>
             ${input.text}
@@ -131,6 +132,8 @@ function questionForm(question) {
     if (question != undefined) {
         input.text.value = question.text;
         input.dontRandomize.checked = question.dontRandomize;
+
+
         for (let answer of question.answers) {
             addAnswer(answer);
         }
@@ -140,6 +143,10 @@ function questionForm(question) {
 
     function remove() {
         e.remove();
+    }
+
+    function onMultiline({ target: { checked } }) {
+        [...input.answers.children].map(c => c.setMulti(checked));
     }
 
     function onAddClick() {
@@ -168,9 +175,10 @@ function questionForm(question) {
 }
 
 function answerForm(answer) {
+    const text = (answer && answer.text.includes('\n')) ? html`<textarea></textarea>` : html`<input type="text" />`;
     const input = {
         check: html`<input type="checkbox" />`,
-        text: html`<input type="text" />`
+        text
     };
     let e;
     e = html`
@@ -180,6 +188,7 @@ function answerForm(answer) {
         <button onClick=${remove}>X</button>
     </div>`;
     e.read = read;
+    e.setMulti = setMulti;
 
     if (answer != undefined) {
         input.text.value = answer.text;
@@ -194,5 +203,12 @@ function answerForm(answer) {
 
     function read() {
         return { text: input.text.value, correct: input.check.checked };
+    }
+
+    function setMulti(value) {
+        const current = input.text.value;
+        const newInput = value ? html`<textarea>${current}</textarea>` : html`<input type="text" value=${current} />`;
+        input.text.replaceWith(newInput);
+        input.text = newInput;
     }
 }

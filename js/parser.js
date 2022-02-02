@@ -133,7 +133,7 @@ function parseTextNode(text) {
     return text
         .replace(/`([^`]+)`/gi, (match, token) => `<span class="code">${token}</span>`)
         .split('\n')
-        .filter(t => t != '')
+        //.filter(t => t != '')
         .join('<br />');
 }
 

@@ -100,7 +100,7 @@ function quizAnswer(answer, index, questionIndex, type = 'closed') {
     const input = html`<input name=${'question' + questionIndex} type=${inputType} value=${type != 'open' ? index : ''} />`;
     const container = html`<span></span>`;
     if (type != 'open') {
-        container.innerHTML = parseToElements(answer.text);
+        container.innerHTML = parseToElements(answer.text.replace(/{{(n)}}/g, () => index + 1));
     }
     const e = html`
         <label className="answer">
