@@ -65,7 +65,7 @@
             "dontRandomize": false
         },
         {
-            "text": "Посочете правилното изпълнение на следната функция:\n```\nfunction sum(a, b) {\n  console.log(a + b;\n}\n```",
+            "text": "Посочете правилното изпълнение на следната функция:\n```\nfunction sum(a, b) {\n  console.log(a + b);\n}\n```",
             "answers": [
                 {
                     "text": "`sum(3,5)`",
