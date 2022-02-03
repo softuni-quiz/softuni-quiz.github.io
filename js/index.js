@@ -1,4 +1,4 @@
-import page from '//unpkg.com/page/page.mjs';
+import page from './lib/page.mjs';
 import html from './dom.js';
 import quizPage from './quizPage.js';
 import quizMaker from './quizMaker.js';

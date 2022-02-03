@@ -1,4 +1,4 @@
-import htm from 'https://unpkg.com/htm?module';
+import htm from './lib/htm/index.mjs';
 
 const html = htm.bind(function (type, props, ...children) { return e.call(this, type, children, props); });
 
