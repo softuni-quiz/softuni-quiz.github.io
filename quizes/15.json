@@ -1,0 +1,316 @@
+{
+  "name": "Arrays Advanced",
+  "category": "01",
+  "questions": [
+    {
+      "text": "С кой метод на масива премахваме последния му елемент?",
+      "answers": [
+        {
+          "text": "`push()`",
+          "correct": false
+        },
+        {
+          "text": "`pop()`",
+          "correct": true
+        },
+        {
+          "text": "`shift()`",
+          "correct": false
+        },
+        {
+          "text": "`unshift()`",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Какво прави метода `unshift` на масива?",
+      "answers": [
+        {
+          "text": "Премахва и връща първия елемент",
+          "correct": false
+        },
+        {
+          "text": "Премахва и връща последния елемент",
+          "correct": false
+        },
+        {
+          "text": "Добавя елемент в началото на масива",
+          "correct": true
+        },
+        {
+          "text": "Добавя елемент в края на масива",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Кои методи манипулират елементите в началото на масива?",
+      "answers": [
+        {
+          "text": "`push()`",
+          "correct": false
+        },
+        {
+          "text": "`pop()`",
+          "correct": false
+        },
+        {
+          "text": "`shift()`",
+          "correct": true
+        },
+        {
+          "text": "`unshift()`",
+          "correct": true
+        },
+        {
+          "text": "`includes()`",
+          "correct": false
+        },
+        {
+          "text": "`indexOf()`",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Методите `unshift()` и `push()` увеличават дължината на масива.",
+      "answers": [
+        {
+          "text": "Вярно",
+          "correct": true
+        },
+        {
+          "text": "Невярно",
+          "correct": false
+        }
+      ],
+      "dontRandomize": true
+    },
+    {
+      "text": "Какво ще се отпечата при изпълнението на следния код:\n```\nlet arr = [3, 8, -1, 5, 2];\n\narr.unshift(arr.pop());\nconsole.log(arr[4]);\n```",
+      "answers": [
+        {
+          "text": "5",
+          "correct": true
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Какъв е резултата когато метода `indexOf()` не открие търсената стойност в масива?",
+      "answers": [
+        {
+          "text": "`-1`",
+          "correct": true
+        },
+        {
+          "text": "`undefined`",
+          "correct": false
+        },
+        {
+          "text": "`0`",
+          "correct": false
+        },
+        {
+          "text": "`null`",
+          "correct": false
+        },
+        {
+          "text": "`ReferenceError`",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Методът `slice()`:",
+      "answers": [
+        {
+          "text": "създава нов масив",
+          "correct": true
+        },
+        {
+          "text": "модифицира първоначалния масив на място",
+          "correct": false
+        },
+        {
+          "text": "обединява два и повече масива",
+          "correct": false
+        },
+        {
+          "text": "брои отзад-напред за аргументите с отрицателна стойност",
+          "correct": true
+        },
+        {
+          "text": "хвърля грешка, ако подадем индекси извън обхвата на масива",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Ако не получи аргументи, метода `slice()` прави плитко копие на масива.",
+      "answers": [
+        {
+          "text": "Вярно",
+          "correct": true
+        },
+        {
+          "text": "Невярно",
+          "correct": false
+        }
+      ],
+      "dontRandomize": true
+    },
+    {
+      "text": "Методът `splice()` може да се използва за:",
+      "answers": [
+        {
+          "text": "изтриване на елементи от произволна позиция",
+          "correct": true
+        },
+        {
+          "text": "добавяне на елементи на произволна позиция",
+          "correct": true
+        },
+        {
+          "text": "копиране на масив",
+          "correct": false
+        },
+        {
+          "text": "отпечатване на масива",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Посочете варианта, който заменя третия елемент (на индекс 2) в следния масив с числото `10`:\n```\nlet arr = [3, 8, -1, 5, 2];\n```",
+      "answers": [
+        {
+          "text": "`arr.splice(2, 1, 10);`",
+          "correct": true
+        },
+        {
+          "text": "`arr.splice(2, 10);`",
+          "correct": false
+        },
+        {
+          "text": "`arr[2].splice(10);`",
+          "correct": false
+        },
+        {
+          "text": "`splice(arr, 2, 1, 10);`",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "За какво служи метода `map()`?",
+      "answers": [
+        {
+          "text": "Създава нов масив като трансформира всички елементи от първоначалния",
+          "correct": true
+        },
+        {
+          "text": "Превръща масив във речник (асоциативен масив)",
+          "correct": false
+        },
+        {
+          "text": "Редуцира елементите в масива до една стойност",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "От какъв тип е аргумента, който се подава на метода `map()`?",
+      "answers": [
+        {
+          "text": "Функция",
+          "correct": true
+        },
+        {
+          "text": "Число",
+          "correct": false
+        },
+        {
+          "text": "Обект",
+          "correct": false
+        },
+        {
+          "text": "Масив",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Посочете варианта, който описва поведението на метода `filter()`:",
+      "answers": [
+        {
+          "text": "Вариант {{n}}:\n```\nfunction myFilter(arr, fn) {\n  let result = [];\n  for (let element of arr) {\n    if (fn(element) == true) {\n      result.push(element);\n    }\n  }\n  return result;\n}\n```",
+          "correct": true
+        },
+        {
+          "text": "Вариант {{n}}:\n```\nfunction myFilter(arr, fn) {\n  let result = [];\n  for (let element of arr) {\n    result.push(fn(element));\n  }\n  return result;\n}\n```",
+          "correct": false
+        },
+        {
+          "text": "Вариант {{n}}:\n```\nfunction myFilter(arr, fn) {\n  let result = [];\n  for (let i = arr.length - 1; i >= 0; i--) {\n    result.push(arr[i]);\n  }\n  return result;\n}\n```",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Какво е поведението на `sort()` ако не подадем сравняваща функция?",
+      "answers": [
+        {
+          "text": "Подредба по числова големина",
+          "correct": false
+        },
+        {
+          "text": "Подредба по азбучен ред",
+          "correct": true
+        },
+        {
+          "text": "Подредба по адрес в паметта",
+          "correct": false
+        },
+        {
+          "text": "Хвърля грешка",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Какво ще отпечата изпълнението на следния код:\n```\nlet arr = [3, 8, 10, 5, 2, 22];\narr.sort((a, b) => b - a);\n\nconsole.log(arr[0]);\n```",
+      "answers": [
+        {
+          "text": "22",
+          "correct": true
+        },
+        {
+          "text": "10",
+          "correct": false
+        },
+        {
+          "text": "2",
+          "correct": false
+        },
+        {
+          "text": "3",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    }
+  ]
+}
