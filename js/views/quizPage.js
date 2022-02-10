@@ -1,12 +1,21 @@
-import { getQuiz } from '../data.js';
 import html from '../dom.js';
+import { getQuizById } from '../data/quiz.js';
 import { parseToElements } from '../parser.js';
+import { getQuestionsByQuiz } from '../data/question.js';
+import { urlName } from '../util.js';
 
 
-export default async function quizPage({ params: { id }, query, isAdmin }) {
+export default async function quizPage({ categories, params: { id }, query, isAdmin }) {
+    let catName;
     let quiz;
     if (id != undefined) {
-        quiz = await getQuiz(id);
+        const data = await Promise.all([
+            getQuizById(id),
+            getQuestionsByQuiz(id)
+        ]);
+        quiz = data[0];
+        quiz.questions = data[1];
+        catName = categories.find(c => c.objectId == quiz.category).name;
     } else if (localStorage.getItem('recentQuiz') != null) {
         quiz = JSON.parse(localStorage.getItem('recentQuiz'));
     } else {
@@ -28,7 +37,7 @@ export default async function quizPage({ params: { id }, query, isAdmin }) {
     return html`
     <div>
         <h1>${quiz.name}</h1>
-        <a className="nav" href="/category/${quiz.category}">Назад към каталога</a>
+        <a className="nav" href="/category/${quiz.category}/${urlName(catName)}">Назад към каталога</a>
         ${isAdmin ? html`<a className="nav" href="/maker/${id}">Редактор</a>` : ''}
         ${input.questions}
         ${input.button}

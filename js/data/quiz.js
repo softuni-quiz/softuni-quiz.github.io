@@ -12,6 +12,12 @@ export async function getQuizesByCategory(catId) {
     return data.results.map(quizViewModel);
 }
 
+
+export async function getQuizById(id) {
+    const quiz = await api.get(endpoints.quizById(id));
+    return quizViewModel(quiz);
+}
+
 export async function createQuiz(quiz) {
     return api.post(endpoints.quizes, quizModelToRecord(quiz));
 }

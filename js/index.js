@@ -6,7 +6,7 @@ import notify from './middlewares/notify.js';
 import { parseQuery } from './util.js';
 import quizPage from './views/quizPage.js';
 import quizMaker from './views/quizMaker.js';
-import { getCategories } from './data.js';
+import { getCategories } from './data/quiz.js';
 import { catalog, catSelector } from './views/catalog.js';
 import { loginPage } from './views/login.js';
 
@@ -29,7 +29,9 @@ window.onload = async () => {
     page('/maker', render(quizMaker));
     page('/maker/:id', render(quizMaker));
     page('/category/:id', render(catalog));
+    page('/category/:id/:catName', render(catalog));
     page('/quiz/:id', render(quizPage));
+    page('/quiz/:id/:quizName', render(quizPage));
 
     page('/login', render(loginPage));
     page('/import/:id', render(importerPage));

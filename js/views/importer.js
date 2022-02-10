@@ -1,7 +1,7 @@
+import html from '../dom.js';
 import { getQuiz } from '../data.js';
 import { createQuestion } from '../data/question.js';
 import { createQuiz, getCategories } from '../data/quiz.js';
-import html from '../dom.js';
 import { createSubmitHandler } from '../util.js';
 
 

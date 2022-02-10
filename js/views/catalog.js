@@ -1,5 +1,6 @@
-import { getQuizIndex } from '../data.js';
 import html from '../dom.js';
+import { getQuizesByCategory } from '../data/quiz.js';
+import { urlName } from '../util.js';
 
 
 export async function catSelector(ctx) {
@@ -10,14 +11,14 @@ export async function catSelector(ctx) {
         <div className="question">
             <h2>Категории</h2>
             <ul>
-                ${ctx.categories.map(i => html`<li><a className="nav list" href=${`/category/${i.id}`}>${i.name} </a>
+                ${ctx.categories.map(i => html`<li><a className="nav list" href=${`/category/${i.objectId}/${urlName(i.name)}`}>${i.name} </a>
                         </li>`)} </ul> </div> </div>`;
 }
 
 export async function catalog(ctx) {
     const catId = ctx.params.id;
-    const list = (await getQuizIndex()).filter(q => q.category == catId);
-    const catName = ctx.categories.find(c => c.id == catId).name;
+    const list = await getQuizesByCategory(catId);
+    const catName = ctx.categories.find(c => c.objectId == catId).name;
 
     return html`
     <div>
@@ -26,6 +27,6 @@ export async function catalog(ctx) {
         <div className="question">
             <p>Изберете тема, за да отворите прилежащия тест:</p>
             <ul>
-                ${list.map(i => html`<li><a className="nav list" href=${`/quiz/${i.id}`}>${i.name} </a> </li>`)} </ul>
+                ${list.map(i => html`<li><a className="nav list" href=${`/quiz/${i.objectId}/${urlName(i.name)}`}>${i.name} </a> </li>`)} </ul>
                         </div> </div>`;
 }

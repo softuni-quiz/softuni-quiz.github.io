@@ -60,3 +60,9 @@ export function parseQuery(querystring) {
         }, {});
     }
 }
+
+export function urlName(name) {
+    return name.toLocaleLowerCase().replace(/ |[^a-zA-Z0-9-]/g, (match) => {
+        return match == ' ' ? '-' : '';
+    });
+}
