@@ -11,7 +11,7 @@ const loginTemplate = (onSubmit) => html`<div>
             <label className="form-field"><span>Username</span><input type="text" name="username" /></label>
             <label className="form-field"><span>Password</span><input type="password" name="password" /></label>
             <div className="form-row">
-                <input className="form-action" type="submit" value="Login" />
+                <button className="form-action" type="submit">Login</button>
             </div>
         </form>
     </div>

@@ -1,6 +1,6 @@
 import { notify } from '../lib/notify.js';
 import { clearUserData, getUserData, setUserData } from '../util.js';
-import { createPointer, createQuery } from './data.js';
+import { createPointer, createPointerQuery, createQuery } from './data.js';
 
 
 const hostname = 'https://parseapi.back4app.com';
@@ -67,7 +67,7 @@ export async function del(url) {
 
 async function info(userObject) {
     if (userObject) {
-        const result = await get(`/roles?where=${createQuery({ users: createPointer('_User', userObject.objectId) })}`);
+        const result = await get(`/roles?where=${createPointerQuery('users', '_User', userObject.objectId) })}`);
         return result.results.map(r => r.name);
     } else {
         throw new Error('User is not logged in');

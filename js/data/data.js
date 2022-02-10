@@ -2,7 +2,13 @@ import { getUserData } from '../util.js';
 
 
 export const endpoints = {
-    categories: '/classes/Category?order=order'
+    categories: '/classes/Category?order=order',
+    quizes: '/classes/Quiz',
+    quizesByCategory: (catId) => `/classes/Quiz?order=order&where=${createPointerQuery('category', 'Category', catId)}`,
+    quizById: (id) => `/classes/Quiz/${id}`,
+    questions: '/classes/Question',
+    questionsByQuizId: (quizId) => `/classes/Question?order=order&where=${createPointerQuery('quiz', 'Quiz', quizId)}`,
+    questionById: (id) => `/classes/Quiz/${id}`
 };
 
 export function createPointerQuery(propName, className, objectId) {

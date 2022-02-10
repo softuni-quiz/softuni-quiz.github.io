@@ -10,6 +10,9 @@ import { getCategories } from './data.js';
 import { catalog, catSelector } from './views/catalog.js';
 import { loginPage } from './views/login.js';
 
+import * as api from './data/question.js';
+window.api = api;
+
 
 window.onload = async () => {
     const categories = await getCategories();

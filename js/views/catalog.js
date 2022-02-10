@@ -6,6 +6,7 @@ export async function catSelector(ctx) {
     return html`
     <div>
         <h1>SoftUni Quizes</h1>
+        ${ctx.isAdmin ? html`<a className="nav" href="/maker">Редактор</a>` : ''}
         <div className="question">
             <h2>Категории</h2>
             <ul>

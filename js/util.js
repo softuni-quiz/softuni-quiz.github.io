@@ -20,13 +20,32 @@ export function clearUserData() {
 }
 
 export function createSubmitHandler(callback, ...fields) {
-    return function (event) {
+    return async function (event) {
         event.preventDefault();
         const formData = new FormData(event.target);
 
+        const elements = [...event.target.querySelectorAll('input, textarea, button')];
+        elements.forEach(f => f.disabled = true);
+
+        const submitBtn = event.target.querySelector('button[type="submit"]');
+        let oldContent;
+        if (submitBtn) {
+            oldContent = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Loading&hellip;';
+        }
+
         const data = fields.reduce((a, c) => Object.assign(a, { [c]: formData.get(c).trim() }), {});
 
-        callback(data, event);
+        try {
+            await callback(data, event);
+        } catch (err) {
+            console.error(err);
+        } finally {
+            elements.forEach(f => f.disabled = false);
+            if (submitBtn) {
+                submitBtn.innerHTML = oldContent;
+            }
+        }
     };
 }
 

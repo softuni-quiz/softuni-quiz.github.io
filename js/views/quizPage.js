@@ -3,7 +3,7 @@ import html from '../dom.js';
 import { parseToElements } from '../parser.js';
 
 
-export default async function quizPage({ params: { id }, query }) {
+export default async function quizPage({ params: { id }, query, isAdmin }) {
     let quiz;
     if (id != undefined) {
         quiz = await getQuiz(id);
@@ -29,6 +29,7 @@ export default async function quizPage({ params: { id }, query }) {
     <div>
         <h1>${quiz.name}</h1>
         <a className="nav" href="/category/${quiz.category}">Назад към каталога</a>
+        ${isAdmin ? html`<a className="nav" href="/maker/${id}">Редактор</a>` : ''}
         ${input.questions}
         ${input.button}
     </div>`;
