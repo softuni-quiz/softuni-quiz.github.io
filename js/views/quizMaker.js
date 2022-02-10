@@ -1,5 +1,5 @@
-import { getQuiz, exportToJson } from './data.js';
-import html from './dom.js';
+import { getQuiz, exportToJson } from '../data.js';
+import html from '../dom.js';
 
 export default async function quizMaker({ params: { id }, categories }) {
     const input = {

@@ -1,6 +1,6 @@
-import { getQuiz } from './data.js';
-import html from './dom.js';
-import { parseToElements } from './parser.js';
+import { getQuiz } from '../data.js';
+import html from '../dom.js';
+import { parseToElements } from '../parser.js';
 
 
 export default async function quizPage({ params: { id }, query }) {
