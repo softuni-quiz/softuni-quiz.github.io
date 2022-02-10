@@ -11,6 +11,7 @@ import { catalog, catSelector } from './views/catalog.js';
 import { loginPage } from './views/login.js';
 
 import * as api from './data/question.js';
+import { importerPage } from './views/importer.js';
 window.api = api;
 
 
@@ -31,6 +32,7 @@ window.onload = async () => {
     page('/quiz/:id', render(quizPage));
 
     page('/login', render(loginPage));
+    page('/import/:id', render(importerPage));
 
     page('/:id', quizRedirect);
 

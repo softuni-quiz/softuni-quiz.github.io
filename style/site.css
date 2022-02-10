@@ -152,7 +152,8 @@ ol li h3 {
     text-align: right;
 }
 
-.form-field input {
+.form-field input, .form-field select {
+    width: 200px;
     font-size: 18px;
 }
 

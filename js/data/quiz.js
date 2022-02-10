@@ -3,7 +3,8 @@ import { createPointer, endpoints } from './data.js';
 
 
 export async function getCategories() {
-    return api.get(endpoints.categories);
+    const data = await api.get(endpoints.categories);
+    return data.results;
 }
 
 export async function getQuizesByCategory(catId) {
