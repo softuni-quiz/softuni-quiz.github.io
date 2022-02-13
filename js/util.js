@@ -19,6 +19,27 @@ export function clearUserData() {
     localStorage.removeItem('userData');
 }
 
+export function getUserIdentifier() {
+    let id;
+    const cookies = document.cookie.split(';').reduce((a, c) => {
+        const [key, value] = c.trim().split('=');
+        a[key] = value;
+        return a;
+    }, {});
+
+    if (cookies.appver != appver || !cookies.identifier) {
+        id = uuid();
+        const expiry = new Date();
+        expiry.setMonth(expiry.getMonth() + 1);
+        document.cookie = `appver=${appver}; expires=${expiry}; path=/`;
+        document.cookie = `identifier=${id}; expires=${expiry}; path=/`;
+    } else {
+        id = cookies.identifier;
+    }
+
+    return id;
+}
+
 export function createSubmitHandler(callback, ...fields) {
     return async function (event) {
         event.preventDefault();
@@ -65,4 +86,8 @@ export function urlName(name) {
     return name.toLocaleLowerCase().replace(/ |[^a-zA-Z0-9-]/g, (match) => {
         return match == ' ' ? '-' : '';
     });
+}
+
+function uuid() {
+    return 'xxxxxxxx-xxxx'.replace(/x/g, () => (Math.random() * 16 | 0).toString(16));
 }

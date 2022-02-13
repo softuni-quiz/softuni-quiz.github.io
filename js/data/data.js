@@ -8,7 +8,9 @@ export const endpoints = {
     quizById: (id) => `/classes/Quiz/${id}`,
     questions: '/classes/Question',
     questionsByQuizId: (quizId) => `/classes/Question?order=order&where=${createPointerQuery('quiz', 'Quiz', quizId)}`,
-    questionById: (id) => `/classes/Quiz/${id}`
+    questionById: (id) => `/classes/Quiz/${id}`,
+    solutions: '/classes/Solution',
+    recentSolutionsByQuiz: (quizId) => `/classes/Solution?where=${createPointerQuery('quiz', 'Quiz', quizId)}`
 };
 
 export function createPointerQuery(propName, className, objectId) {

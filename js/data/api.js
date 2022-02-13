@@ -15,7 +15,7 @@ async function request(url, options) {
                 clearUserData();
             }
             throw {
-                message: error.error,
+                message: error.error || error.message,
                 code: error.code
             };
         }
@@ -67,7 +67,7 @@ export async function del(url) {
 
 async function info(userObject) {
     if (userObject) {
-        const result = await get(`/roles?where=${createPointerQuery('users', '_User', userObject.objectId) })}`);
+        const result = await get(`/roles?where=${createPointerQuery('users', '_User', userObject.objectId) }`);
         return result.results.map(r => r.name);
     } else {
         throw new Error('User is not logged in');
@@ -77,7 +77,7 @@ async function info(userObject) {
 export async function login(username, password) {
     const result = await post('/login', { username, password });
     const roles = await info(result);
-
+    
     const userData = {
         username: result.username,
         id: result.objectId,

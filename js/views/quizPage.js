@@ -3,6 +3,7 @@ import { getQuizById } from '../data/quiz.js';
 import { parseToElements } from '../parser.js';
 import { getQuestionsByQuiz } from '../data/question.js';
 import { urlName } from '../util.js';
+import { submitSolution } from '../data/solution.js';
 
 
 export default async function quizPage({ categories, params: { id }, query, isAdmin }) {
@@ -47,6 +48,10 @@ export default async function quizPage({ categories, params: { id }, query, isAd
         const result = [...input.questions.children].map(c => c.validate());
         const correct = result.filter(e => e);
         input.button.textContent = `${correct.length} / ${result.length} верни отговора`;
+        
+        // Stat collection
+        const solution = [...input.questions.children].map(c => c.collect());
+        submitSolution(id, solution);
     }
 }
 
@@ -61,7 +66,7 @@ function quizQuestion(question, index) {
         }
     })();
 
-    question.answers = question.answers.map(a => ({ a, o: Math.random() }));
+    question.answers = question.answers.map((a, i) => ({ a, o: Math.random(), originalIndex: i }));
     if (!question.dontRandomize) {
         question.answers.sort(({ o: a }, { o: b }) => a - b);
     }
@@ -69,7 +74,7 @@ function quizQuestion(question, index) {
     const input = {
         answers: html`
         <div>
-            ${question.answers.map((a, i) => quizAnswer(a.a, i, index, type))}
+            ${question.answers.map((a, i) => quizAnswer(a.a, i, index, type, a.originalIndex))}
         </div>`
     };
 
@@ -84,6 +89,7 @@ function quizQuestion(question, index) {
         </div>
         `;
     e.validate = validate;
+    e.collect = collect;
 
     return e;
 
@@ -98,16 +104,20 @@ function quizQuestion(question, index) {
             return false;
         }
     }
+
+    function collect() {
+        return [...input.answers.children].map(c => c.collect()).reduce((a, c) => Object.assign(a, c), {});
+    }
 }
 
-function quizAnswer(answer, index, questionIndex, type = 'closed') {
+function quizAnswer(answer, index, questionIndex, type = 'closed', originalIndex) {
     const inputType = {
         'open': 'text',
         'multi': 'checkbox',
         'closed': 'radio'
     }[type];
 
-    const input = html`<input name=${'question' + questionIndex} type=${inputType} value=${type != 'open' ? index : ''} />`;
+    const input = html`<input name=${'question' + questionIndex} type=${inputType} value=${type !='open' ? index : '' } />`;
     const container = html`<span></span>`;
     if (type != 'open') {
         container.innerHTML = parseToElements(answer.text.replace(/{{(n)}}/g, () => index + 1));
@@ -118,6 +128,7 @@ function quizAnswer(answer, index, questionIndex, type = 'closed') {
             ${container}
         </label>`;
     e.validate = validate;
+    e.collect = collect;
 
     return e;
 
@@ -143,5 +154,9 @@ function quizAnswer(answer, index, questionIndex, type = 'closed') {
                 return true;
             }
         }
+    }
+
+    function collect() {
+        return { [originalIndex.toString()]: type == 'open' ? input.value : e.children[0].checked };
     }
 }

@@ -44,7 +44,6 @@ window.onload = async () => {
 
     function render(component) {
         return async (ctx) => {
-            console.log('begin render');
             main.appendChild(spinner);
             ctx.categories = categories;
             ctx.query = parseQuery(ctx.querystring);
@@ -52,9 +51,9 @@ window.onload = async () => {
                 const result = await component(ctx);
                 main.replaceChildren(result);
             } catch (err) {
+                spinner.remove();
                 notify(err.message);
             }
-            console.log('end render');
         };
     }
 };
