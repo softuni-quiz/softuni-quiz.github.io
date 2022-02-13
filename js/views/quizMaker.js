@@ -1,4 +1,6 @@
-import { getQuiz, exportToJson } from '../data.js';
+import { exportToJson } from '../data.js';
+import { getQuestionsByQuiz } from '../data/question.js';
+import { getQuizById } from '../data/quiz.js';
 import html from '../dom.js';
 
 export default async function quizMaker({ params: { id }, categories }) {
@@ -25,7 +27,12 @@ export default async function quizMaker({ params: { id }, categories }) {
     </div>`;
 
     if (id != undefined) {
-        const quiz = await getQuiz(id);
+        const data = await Promise.all([
+            getQuizById(id),
+            getQuestionsByQuiz(id)
+        ]);
+        const quiz = data[0];
+        quiz.questions = data[1];
 
         input.title.value = quiz.name;
         input.category.value = quiz.category;
@@ -102,7 +109,7 @@ export default async function quizMaker({ params: { id }, categories }) {
 
 function catSelector(categories) {
     return html`<select name="category">
-    ${categories.map(c => html`<option value=${c.id}>${c.name}</option>`)}
+    ${categories.map(c => html`<option value=${c.objectId}>${c.name}</option>`)}
 </select>`;
 }
 
