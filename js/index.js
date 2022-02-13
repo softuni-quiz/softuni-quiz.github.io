@@ -12,6 +12,7 @@ import { loginPage } from './views/login.js';
 
 import * as api from './data/question.js';
 import { importerPage } from './views/importer.js';
+import { loader } from './views/common/loader.js';
 window.api = api;
 
 
@@ -19,6 +20,7 @@ window.onload = async () => {
     const categories = await getCategories();
 
     const main = document.querySelector('main');
+    const spinner = loader();
 
     page(addSession());
     page(notify());
@@ -42,15 +44,17 @@ window.onload = async () => {
 
     function render(component) {
         return async (ctx) => {
+            console.log('begin render');
+            main.appendChild(spinner);
             ctx.categories = categories;
             ctx.query = parseQuery(ctx.querystring);
             try {
                 const result = await component(ctx);
-                main.innerHTML = '';
-                main.appendChild(result);
+                main.replaceChildren(result);
             } catch (err) {
                 notify(err.message);
             }
+            console.log('end render');
         };
     }
 };
