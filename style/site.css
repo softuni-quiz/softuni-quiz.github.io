@@ -174,3 +174,14 @@ ol li h3 {
     background-color: rgb(194, 229, 208);
     cursor: pointer;
 }
+
+.stats-percentage {
+    display: inline-block;
+    font-weight: normal;
+    border-radius: 6px;
+    background-color: #eeeeee;
+    padding: 2px 4px;
+    font-size: 85%;
+    width: 45px;
+    text-align: right;
+}

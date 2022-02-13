@@ -3,7 +3,7 @@ import { getQuizById } from '../data/quiz.js';
 import { parseToElements } from '../parser.js';
 import { getQuestionsByQuiz } from '../data/question.js';
 import { urlName } from '../util.js';
-import { submitSolution } from '../data/solution.js';
+import { getQuizStats, submitSolution } from '../data/solution.js';
 
 
 export default async function quizPage({ categories, params: { id }, query, isAdmin }) {
@@ -48,10 +48,22 @@ export default async function quizPage({ categories, params: { id }, query, isAd
         const result = [...input.questions.children].map(c => c.validate());
         const correct = result.filter(e => e);
         input.button.textContent = `${correct.length} / ${result.length} верни отговора`;
-        
-        // Stat collection
-        const solution = [...input.questions.children].map(c => c.collect());
-        submitSolution(id, solution);
+
+        const config = `from=${from}&to=${to}`;
+        if (isAdmin) {
+            displayStats(id, config, [...input.questions.children]);
+        } else {
+            // Stat collection
+            const solution = [...input.questions.children].map(c => c.collect());
+            submitSolution(id, config, solution);
+        }
+    }
+}
+
+async function displayStats(quizId, config, elements) {
+    const stats = await getQuizStats(quizId, config);
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].showStats(stats[i]);
     }
 }
 
@@ -90,6 +102,7 @@ function quizQuestion(question, index) {
         `;
     e.validate = validate;
     e.collect = collect;
+    e.showStats = showStats;
 
     return e;
 
@@ -108,6 +121,10 @@ function quizQuestion(question, index) {
     function collect() {
         return [...input.answers.children].map(c => c.collect()).reduce((a, c) => Object.assign(a, c), {});
     }
+
+    function showStats(stats) {
+        [...input.answers.children].forEach(a => a.showStats(stats));
+    }
 }
 
 function quizAnswer(answer, index, questionIndex, type = 'closed', originalIndex) {
@@ -117,7 +134,7 @@ function quizAnswer(answer, index, questionIndex, type = 'closed', originalIndex
         'closed': 'radio'
     }[type];
 
-    const input = html`<input name=${'question' + questionIndex} type=${inputType} value=${type !='open' ? index : '' } />`;
+    const input = html`<input name=${'question' + questionIndex} type=${inputType} value=${type != 'open' ? index : ''} />`;
     const container = html`<span></span>`;
     if (type != 'open') {
         container.innerHTML = parseToElements(answer.text.replace(/{{(n)}}/g, () => index + 1));
@@ -129,6 +146,7 @@ function quizAnswer(answer, index, questionIndex, type = 'closed', originalIndex
         </label>`;
     e.validate = validate;
     e.collect = collect;
+    e.showStats = showStats;
 
     return e;
 
@@ -158,5 +176,27 @@ function quizAnswer(answer, index, questionIndex, type = 'closed', originalIndex
 
     function collect() {
         return { [originalIndex.toString()]: type == 'open' ? input.value : e.children[0].checked };
+    }
+
+    function showStats(stats) {
+        if (type == 'open') {
+            const given = {};
+            stats[originalIndex.toString()].forEach(a => {
+                const asString = a.toString().toLocaleLowerCase();
+                if (given[asString] == undefined) {
+                    given[asString] = 0;
+                }
+                given[asString]++;
+            });
+            const output = Object.entries(given)
+                .sort(([value1, count1], [value2, count2]) => count2 - count1)
+                .map(([value, count]) => html`<p><span className="stats-percentage">${Math.round((count / stats.total) * 100)}%</span> ${value}</p>`);
+
+            e.appendChild(html`<div>${output}</div>`);
+        } else {
+            const selected = stats[originalIndex.toString()] || 0;
+            const percentage = Math.round((selected / stats.total) * 100);
+            e.prepend(html`<span className="stats-percentage">${percentage}%</span>`);
+        }
     }
 }
