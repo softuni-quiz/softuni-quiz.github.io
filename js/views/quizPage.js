@@ -32,36 +32,50 @@ export default async function quizPage({ categories, params: { id }, query, isAd
         <ol start=${from}>
             ${questions.map(quizQuestion)}
         </ol>`,
-        button: html`<button className="validate-btn" onClick=${validate}>Изпрати отговори</button>`
+        button: html`<button className="validate-btn" onClick=${()=> validate()}>Изпрати отговори</button>`
     };
 
     return html`
     <div>
         <h1>${quiz.name}</h1>
         <a className="nav" href="/category/${quiz.category}/${urlName(catName)}">Назад към каталога</a>
-        ${isAdmin ? html`<a className="nav" href="/maker/${id}">Редактор</a>` : ''}
+        ${createAdminPanel()}
         ${input.questions}
         ${input.button}
     </div>`;
 
-    function validate() {
+    function validate(hours = 1) {
         const result = [...input.questions.children].map(c => c.validate());
         const correct = result.filter(e => e);
         input.button.textContent = `${correct.length} / ${result.length} верни отговора`;
 
         const config = `from=${from}&to=${to}`;
         if (isAdmin) {
-            displayStats(id, config, [...input.questions.children]);
+            displayStats(id, config, [...input.questions.children], hours);
         } else {
             // Stat collection
             const solution = [...input.questions.children].map(c => c.collect());
             submitSolution(id, config, solution);
         }
     }
+
+    function createAdminPanel() {
+        if (isAdmin) {
+            return html`
+            <div>
+                <a className="nav" href="/maker/${id}">Редактор</a>
+                <a className="nav" onClick=${()=> validate(6)} href="javascript:void(0)">Статистика 6h</a>
+                <a className="nav" onClick=${()=> validate(12)} href="javascript:void(0)">Статистика 12h</a>
+                <a className="nav" onClick=${()=> validate(24)} href="javascript:void(0)">Статистика 24h</a>
+            </div>`;
+        } else {
+            return '';
+        }
+    }
 }
 
-async function displayStats(quizId, config, elements) {
-    const stats = await getQuizStats(quizId, config);
+async function displayStats(quizId, config, elements, hours) {
+    const stats = await getQuizStats(quizId, config, hours);
     for (let i = 0; i < elements.length; i++) {
         elements[i].showStats(stats[i]);
     }
@@ -134,7 +148,7 @@ function quizAnswer(answer, index, questionIndex, type = 'closed', originalIndex
         'closed': 'radio'
     }[type];
 
-    const input = html`<input name=${'question' + questionIndex} type=${inputType} value=${type != 'open' ? index : ''} />`;
+    const input = html`<input name=${'question' + questionIndex} type=${inputType} value=${type !='open' ? index : '' } />`;
     const container = html`<span></span>`;
     if (type != 'open') {
         container.innerHTML = parseToElements(answer.text.replace(/{{(n)}}/g, () => index + 1));
@@ -205,9 +219,9 @@ function composeStats(type, stats, originalIndex, element) {
 }
 
 function createStatBubble(value) {
-        const percentage = Math.round(value * 100);
-        const bubble = html`<span className="stats-percentage">${percentage}%</span>`;
-        bubble.style.background = `linear-gradient(to right, #fff ${percentage}%, #ddd 0)`;
-        
-        return bubble;
+    const percentage = Math.round(value * 100);
+    const bubble = html`<span className="stats-percentage">${percentage}%</span>`;
+    bubble.style.background = `linear-gradient(to right, #fff ${percentage}%, #ddd 0)`;
+
+    return bubble;
 }

@@ -8,15 +8,16 @@ export async function submitSolution(quizId, config, solution) {
     const submission = {
         quiz: createPointer('Quiz', quizId),
         identifier,
+        config,
         answers: solution
     };
 
     post(endpoints.solutions, submission);
 }
 
-export async function getQuizStats(quizId, config) {
+export async function getQuizStats(quizId, config, hours) {
     const ids = {};
-    const submissions = await get(endpoints.recentSolutionsByQuiz(quizId, config));
+    const submissions = await get(endpoints.recentSolutionsByQuiz(quizId, config, hours));
     const answers = submissions.results
         .filter(r => {
             if (ids[r.identifier] != undefined) {

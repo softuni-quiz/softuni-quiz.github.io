@@ -10,16 +10,16 @@ export const endpoints = {
     questionsByQuizId: (quizId) => `/classes/Question?order=order&where=${createPointerQuery('quiz', 'Quiz', quizId)}`,
     questionById: (id) => `/classes/Quiz/${id}`,
     solutions: '/classes/Solution',
-    recentSolutionsByQuiz: (quizId, config) => `/classes/Solution?where=${createQuery({
+    recentSolutionsByQuiz: (quizId, config, hours) => `/classes/Solution?where=${createQuery({
         quiz: createPointer('Quiz', quizId),
-        createdAt: createTimeQuery(),
+        createdAt: createTimeQuery(hours),
         config
     })}&order=createdAt`
 };
 
-function createTimeQuery() {
+function createTimeQuery(hours) {
     const limit = new Date();
-    limit.setHours(limit.getHours() - 10); // TODO reduce timespan
+    limit.setHours(limit.getHours() - hours);
 
     return {
         $gte: {
