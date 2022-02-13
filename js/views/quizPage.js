@@ -179,24 +179,35 @@ function quizAnswer(answer, index, questionIndex, type = 'closed', originalIndex
     }
 
     function showStats(stats) {
-        if (type == 'open') {
-            const given = {};
-            stats[originalIndex.toString()].forEach(a => {
-                const asString = a.toString().toLocaleLowerCase();
-                if (given[asString] == undefined) {
-                    given[asString] = 0;
-                }
-                given[asString]++;
-            });
-            const output = Object.entries(given)
-                .sort(([value1, count1], [value2, count2]) => count2 - count1)
-                .map(([value, count]) => html`<p><span className="stats-percentage">${Math.round((count / stats.total) * 100)}%</span> ${value}</p>`);
-
-            e.appendChild(html`<div>${output}</div>`);
-        } else {
-            const selected = stats[originalIndex.toString()] || 0;
-            const percentage = Math.round((selected / stats.total) * 100);
-            e.prepend(html`<span className="stats-percentage">${percentage}%</span>`);
-        }
+        composeStats(type, stats, originalIndex, e);
     }
+}
+
+function composeStats(type, stats, originalIndex, element) {
+    if (type == 'open') {
+        const given = {};
+        stats[originalIndex.toString()].forEach(a => {
+            const asString = a.toString().toLocaleLowerCase();
+            if (given[asString] == undefined) {
+                given[asString] = 0;
+            }
+            given[asString]++;
+        });
+        const output = Object.entries(given)
+            .sort(([value1, count1], [value2, count2]) => count2 - count1)
+            .map(([value, count]) => html`<p>${createStatBubble(count / stats.total)} ${value}</p>`);
+
+        element.appendChild(html`<div>${output}</div>`);
+    } else {
+        const selected = stats[originalIndex.toString()] || 0;
+        element.prepend(createStatBubble(selected / stats.total));
+    }
+}
+
+function createStatBubble(value) {
+        const percentage = Math.round(value * 100);
+        const bubble = html`<span className="stats-percentage">${percentage}%</span>`;
+        bubble.style.background = `linear-gradient(to right, #fff ${percentage}%, #ddd 0)`;
+        
+        return bubble;
 }
