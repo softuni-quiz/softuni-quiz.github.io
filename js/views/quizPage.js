@@ -2,7 +2,7 @@ import html from '../dom.js';
 import { getQuizById } from '../data/quiz.js';
 import { parseToElements } from '../parser.js';
 import { getQuestionsByQuiz } from '../data/question.js';
-import { urlName } from '../util.js';
+import { compareOpen, hashOpen, urlName } from '../util.js';
 import { getQuizStats, submitSolution } from '../data/solution.js';
 
 
@@ -167,7 +167,7 @@ function quizAnswer(answer, index, questionIndex, type = 'closed', originalIndex
     function validate() {
         if (answer.correct) {
             e.classList.add('correct');
-            if ((type == 'open' && input.value == answer.text) || e.children[0].checked) {
+            if ((type == 'open' && compareOpen(input.value, answer.text)) || e.children[0].checked) {
                 e.classList.add('selected-correct');
                 return true;
             } else {
@@ -189,7 +189,7 @@ function quizAnswer(answer, index, questionIndex, type = 'closed', originalIndex
     }
 
     function collect() {
-        return { [originalIndex.toString()]: type == 'open' ? input.value : e.children[0].checked };
+        return { [originalIndex.toString()]: type == 'open' ? input.value.trim() : e.children[0].checked };
     }
 
     function showStats(stats) {
@@ -199,15 +199,16 @@ function quizAnswer(answer, index, questionIndex, type = 'closed', originalIndex
 
 function composeStats(type, stats, originalIndex, element) {
     if (type == 'open') {
-        const given = {};
+        const given = new Map();
         stats[originalIndex.toString()].forEach(a => {
-            const asString = a.toString().toLocaleLowerCase();
-            if (given[asString] == undefined) {
-                given[asString] = 0;
+            const asString = hashOpen(a);
+            if (given.has(asString) == false) {
+                given.set(asString, 0);
             }
-            given[asString]++;
+            given.set(asString, given.get(asString) + 1);
         });
-        const output = Object.entries(given)
+        console.log(given);
+        const output = [...given.entries()]
             .sort(([value1, count1], [value2, count2]) => count2 - count1)
             .map(([value, count]) => html`<p>${createStatBubble(count / stats.total)} ${value}</p>`);
 

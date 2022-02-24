@@ -91,3 +91,21 @@ export function urlName(name) {
 function uuid() {
     return 'xxxxxxxx-xxxx'.replace(/x/g, () => (Math.random() * 16 | 0).toString(16));
 }
+
+export function hashOpen(value) {
+    const asNumber = Number(value);
+    if (value != '' && Number.isNaN(asNumber) == false) {
+        return asNumber.toFixed(2);
+    } else {
+        return value.trim().toLocaleLowerCase();
+    }
+}
+
+export function compareOpen(value, expected) {
+    const asNumber = Number(expected);
+    if (Number.isNaN(asNumber) == false) {
+        return Number(value).toFixed(1) == asNumber.toFixed(1);
+    } else {
+        return value.trim().toLocaleLowerCase() == expected.trim().toLocaleLowerCase();
+    }
+}

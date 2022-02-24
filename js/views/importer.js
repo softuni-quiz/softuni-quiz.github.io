@@ -26,9 +26,10 @@ const pageTemplate = (categories, name, questions, onSubmit) => html`<div>
 </div>`;
 
 export async function importerPage(ctx) {
+    const quizId = ctx.params.id;
     const [categories, quizData] = await Promise.all([
         getCategories(),
-        getQuiz(ctx.params.id)
+        getQuiz(quizId)
     ]);
     console.log(categories, quizData);
 

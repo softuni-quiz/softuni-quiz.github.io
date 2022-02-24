@@ -3,7 +3,11 @@ export async function  getCategories() {
 }
 
 export async function getQuiz(id) {
-    return await (await fetch(`/quizes/${id}.json`)).json();
+    if (id) {
+        return await (await fetch(`/quizes/${id}.json`)).json();
+    } else {
+        return JSON.parse(localStorage.getItem('recentQuiz'));
+    }
 }
 
 export async function getQuizIndex() {
