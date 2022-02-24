@@ -75,9 +75,13 @@ export default async function quizPage({ categories, params: { id }, query, isAd
 }
 
 async function displayStats(quizId, config, elements, hours) {
+    /** @type {QuizStats} */
     const stats = await getQuizStats(quizId, config, hours);
     for (let i = 0; i < elements.length; i++) {
-        elements[i].showStats(stats[i]);
+        const current = stats[i];
+        if (current) {
+            elements[i].showStats(current);
+        }
     }
 }
 
@@ -197,6 +201,13 @@ function quizAnswer(answer, index, questionIndex, type = 'closed', originalIndex
     }
 }
 
+/**
+ * 
+ * @param {string} type 
+ * @param {QuestionStats} stats 
+ * @param {number} originalIndex 
+ * @param {HTMLElement} element 
+ */
 function composeStats(type, stats, originalIndex, element) {
     if (type == 'open') {
         const given = new Map();
@@ -207,7 +218,6 @@ function composeStats(type, stats, originalIndex, element) {
             }
             given.set(asString, given.get(asString) + 1);
         });
-        console.log(given);
         const output = [...given.entries()]
             .sort(([value1, count1], [value2, count2]) => count2 - count1)
             .map(([value, count]) => html`<p>${createStatBubble(count / stats.total)} ${value}</p>`);
@@ -226,3 +236,12 @@ function createStatBubble(value) {
 
     return bubble;
 }
+
+/**
+ * @typedef {Array<QuestionStats>} QuizStats
+ */
+
+/**
+ * @typedef {Object} QuestionStats
+ * @property {number} QuestionStats.total - Total submissions
+ */
