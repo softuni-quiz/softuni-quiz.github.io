@@ -1,0 +1,340 @@
+{
+  "name": "Objects and Classes",
+  "category": "VDH2JfspGQ",
+  "questions": [
+    {
+      "text": "Обектите в JavaScript са:",
+      "answers": [
+        {
+          "text": "Сбор от двойки ключ-стойност, наречени свойства",
+          "correct": true
+        },
+        {
+          "text": "Друго име за клас",
+          "correct": false
+        },
+        {
+          "text": "Наименувана поредица от операции",
+          "correct": false
+        },
+        {
+          "text": "Линейна структура от данни",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Посочете правилната декларация на обект:",
+      "answers": [
+        {
+          "text": "`let myObj = [1, 2, 3]`",
+          "correct": false
+        },
+        {
+          "text": "`let myObj = {a: 1, b: 2, c:3}`",
+          "correct": true
+        },
+        {
+          "text": "`let myObj = {\"a\", \"b\", \"c\"}`",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Структурата на обектите в JavaScript трябва да се дефинира предварително и не може да бъде променяна.",
+      "answers": [
+        {
+          "text": "Вярно",
+          "correct": false
+        },
+        {
+          "text": "Невярно",
+          "correct": true
+        }
+      ],
+      "dontRandomize": true
+    },
+    {
+      "text": "Когато достъпваме свойство на обект чрез индексиращия оператор `[]`, какво можем да подадем в него?",
+      "answers": [
+        {
+          "text": "Името на свойството в кавички като низ (string)",
+          "correct": true
+        },
+        {
+          "text": "Променлива или израз, съдържащи името на свойството като низ (string)",
+          "correct": true
+        },
+        {
+          "text": "Името на свойството изписано буквално без кавички",
+          "correct": false
+        },
+        {
+          "text": "Стойността на свойството",
+          "correct": false
+        },
+        {
+          "text": "Цяло число, означаващо поредността на свойството в обекта",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Отбележете валидните начини за достъпване на свойство за следния обект:\n```\nlet car = {\n  make: 'ACME',\n  model: 'VrooMaster 2.0',\n  color: 'red',\n  topSpeed: 240,\n  mileage: 16\n}\n```",
+      "answers": [
+        {
+          "text": "`car.model`",
+          "correct": true
+        },
+        {
+          "text": "`car['make']`",
+          "correct": true
+        },
+        {
+          "text": "`car[color]`",
+          "correct": false
+        },
+        {
+          "text": "`car.topSpeed()`",
+          "correct": false
+        },
+        {
+          "text": "`car('mileage')`",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Метода `Object.keys()` връща:",
+      "answers": [
+        {
+          "text": "Масив от ключовете на обекта",
+          "correct": true
+        },
+        {
+          "text": "Масив от свойностите на обекта",
+          "correct": false
+        },
+        {
+          "text": "Масив от двойки ключ-стойност на обекта, оформени като масиви",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Каква стойност ще се отпечата в конзолата при изпълнението на следния код:\n```\nlet num = 5;\n\nfunction increment(value) {\n  value += 1;\n}\n\nincrement(num);\nconsole.log(num);\n```",
+      "answers": [
+        {
+          "text": "5",
+          "correct": true
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Какъв тип данни са обектите?",
+      "answers": [
+        {
+          "text": "Примитивен",
+          "correct": false
+        },
+        {
+          "text": "Референтен",
+          "correct": true
+        },
+        {
+          "text": "Сложен",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Какъв ще е резултата от изпълнението на следния код:\n```\nlet myAccount = {\n  holder: 'John',\n  balance: 1500\n};\n\nlet otherAccount = myAccount;\notherAccount.balance -= 300;\n\nconsole.log(myAccount.balance);\n```",
+      "answers": [
+        {
+          "text": "1500",
+          "correct": false
+        },
+        {
+          "text": "1200",
+          "correct": true
+        },
+        {
+          "text": "1800",
+          "correct": false
+        },
+        {
+          "text": "undefined",
+          "correct": false
+        },
+        {
+          "text": "ReferenceError",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Обектите в JavaScript могат да съдържат в себе си други обекти.",
+      "answers": [
+        {
+          "text": "Вярно",
+          "correct": true
+        },
+        {
+          "text": "Невярно",
+          "correct": false
+        }
+      ],
+      "dontRandomize": true
+    },
+    {
+      "text": "Какво е едно от основните предназначения на формата JSON?",
+      "answers": [
+        {
+          "text": "Обмен на данни в интернет мрежата",
+          "correct": true
+        },
+        {
+          "text": "Участие в древногръцки митове",
+          "correct": false
+        },
+        {
+          "text": "Дълбоко копиране на референтни типове",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Метода `JSON.parse()` служи за:",
+      "answers": [
+        {
+          "text": "Преобразуване на JSON низ в обект",
+          "correct": true
+        },
+        {
+          "text": "Преобразуване на обект в JSON низ",
+          "correct": false
+        },
+        {
+          "text": "Проверка на валидността на JSON низ",
+          "correct": false
+        },
+        {
+          "text": "Извличане на масив със стойностите на обект",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Какво е приложението на класовете в JavaScript?",
+      "answers": [
+        {
+          "text": "Създаване на обекти по дефиниран шаблон",
+          "correct": true
+        },
+        {
+          "text": "Разклоняване на програмната логика",
+          "correct": false
+        },
+        {
+          "text": "Обмен на данни в интернет мрежата",
+          "correct": false
+        },
+        {
+          "text": "Превръщане на референтни типове в примитивни и обратно",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Какво наричаме \"инстанция\"?",
+      "answers": [
+        {
+          "text": "Обект, създаден чрез клас",
+          "correct": true
+        },
+        {
+          "text": "Обект, създаден чрез литерал",
+          "correct": false
+        },
+        {
+          "text": "Шаблон за създаване на обекти",
+          "correct": false
+        },
+        {
+          "text": "Променлива, част от обект",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Попълнете липсващия фрагмент:\n```\nclass Employee {\n  {{12}}(name, position) {\n    this.name = name;\n    this.position = position;\n  }\n}\n```",
+      "answers": [
+        {
+          "text": "constructor",
+          "correct": true
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "С коя ключова дума създаваме инстанция?",
+      "answers": [
+        {
+          "text": "`new`",
+          "correct": true
+        },
+        {
+          "text": "`create`",
+          "correct": false
+        },
+        {
+          "text": "`instance`",
+          "correct": false
+        },
+        {
+          "text": "`class`",
+          "correct": false
+        },
+        {
+          "text": "`this`",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    },
+    {
+      "text": "Към какво сочи референцията `this` при изпълнение на метод на инстанция?",
+      "answers": [
+        {
+          "text": "Към обекта, от който е изпълнен метода",
+          "correct": true
+        },
+        {
+          "text": "Към изпъления метод",
+          "correct": false
+        },
+        {
+          "text": "Не съществува такава референция",
+          "correct": false
+        },
+        {
+          "text": "Към родителя на обекта",
+          "correct": false
+        }
+      ],
+      "dontRandomize": false
+    }
+  ]
+}
