@@ -31,7 +31,11 @@ export function e(type, content, attributes) {
     };
 
     if (content !== undefined && content !== null) {
-        result.append(content);
+        if (content.length == 1 && typeof content[0] == 'string') {
+            result.innerHTML = content[0];
+        } else {
+            result.append(content);
+        }
     }
     return result;
 }

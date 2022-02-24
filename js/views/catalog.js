@@ -27,6 +27,6 @@ export async function catalog(ctx) {
         <div className="question">
             <p>Изберете тема, за да отворите прилежащия тест:</p>
             <ul>
-                ${list.map(i => html`<li><a className="nav list" href=${`/quiz/${i.objectId}/${urlName(i.name)}`}>${i.name} </a> </li>`)} </ul>
+                ${list.filter(q => q.visible).map(i => html`<li><a className="nav list" href=${`/quiz/${i.objectId}/${urlName(i.name)}`}>${i.name} </a> </li>`)} </ul>
                         </div> </div>`;
 }

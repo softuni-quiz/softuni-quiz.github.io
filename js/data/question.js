@@ -8,11 +8,13 @@ export async function getQuestionsByQuiz(quizId) {
 }
 
 export async function createQuestion(question) {
-    return api.post(endpoints.questions, questionModelToRecord(question));
+    const { objectId } = await api.post(endpoints.questions, questionModelToRecord(question));
+    return Object.assign({ objectId }, question);
 }
 
 export async function updateQuestion(id, question) {
-    return api.put(endpoints.questionById(id), questionModelToRecord(question));
+    await api.put(endpoints.questionById(id), questionModelToRecord(question));
+    return question;
 }
 
 export async function deleteQuestion(id) {
@@ -33,5 +35,3 @@ function questionViewMovel(question) {
         quiz: question.quiz.objectId
     });
 }
-
-// YahlbmOXiT

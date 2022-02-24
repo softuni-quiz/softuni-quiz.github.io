@@ -13,6 +13,17 @@
     margin-top: 30vh;
 }
 
+.spinner-overlay.local {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.spinner-container.local {
+    margin: auto;
+}
+
 .lds-spinner {
     color: official;
     display: inline-block;

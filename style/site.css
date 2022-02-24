@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #eeeeee;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -52,27 +56,12 @@ h1 {
     background-color: #eeffee;
 }
 
-
 .correct {
     background-color: rgb(153, 229, 183);
 }
 
 .wrong {
     background-color: rgb(231, 190, 190);
-}
-
-.question-form {
-    border: 1px solid black;
-    margin: 4px;
-}
-
-.question-form input[type="text"] {
-    width: 400px;
-}
-
-.question-form textarea {
-    display: block;
-    width: 450px;
 }
 
 .nav {
@@ -116,24 +105,11 @@ ol li h3 {
     display: block;
 }
 
-.order-setting {
-    float: right;
-}
-
-.quiz-title {
-    width: 400px;
-    font-size: 18px;
-}
-
 @media screen and (min-width: 720px) {
     main {
         max-width: 720px;
         margin: auto;
     }
-}
-
-.quiz-maker {
-    padding-bottom: 50vh;
 }
 
 .input-form {

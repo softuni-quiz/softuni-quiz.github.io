@@ -44,5 +44,3 @@ function quizViewModel(quiz) {
         category: quiz.category.objectId
     });
 }
-
-// VDH2JfspGQ

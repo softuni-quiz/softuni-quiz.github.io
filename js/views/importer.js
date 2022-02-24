@@ -46,7 +46,8 @@ export async function importerPage(ctx) {
             const quiz = await createQuiz({
                 name: quizData.name,
                 order: Number(data.order),
-                category: data.category
+                category: data.category,
+                visible: true
             });
             quizId = quiz.objectId;
 

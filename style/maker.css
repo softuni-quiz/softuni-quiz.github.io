@@ -1,0 +1,59 @@
+.quiz-maker {
+    padding-bottom: 50vh;
+}
+
+.quiz-name {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+}
+
+.maker-title {
+    margin: 16px 0;
+    position: relative;
+    padding: 16px;
+}
+
+.maker-input-row {
+    display: block;
+    margin: 8px 0;
+}
+
+.maker-input-row span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    padding-right: 16px;
+}
+
+
+.maker-input-row.wide span {
+    width: 160px;
+}
+
+.question-form {
+    position: relative;
+    border: 1px solid black;
+    margin: 4px;
+    padding: 16px;
+}
+
+.question-form input[type="text"] {
+    width: 610px;
+}
+
+.question-form textarea {
+    display: block;
+    width: 650px;
+    resize: vertical;
+}
+
+.question-control {
+    float: right;
+}
+
+.question-form::after {
+    display: table;
+    clear: both;
+    content: "";
+}
