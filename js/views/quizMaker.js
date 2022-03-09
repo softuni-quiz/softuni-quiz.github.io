@@ -4,6 +4,7 @@ import { createQuestion, deleteQuestion, getQuestionsByQuiz, updateQuestion } fr
 import { createQuiz, getQuizById, updateQuiz } from '../data/quiz.js';
 import { notify } from '../lib/notify.js';
 import { overlayElement } from './common/loader.js';
+import { quizQuestion } from './common/question.js';
 
 export default async function quizMaker({ params: { id }, categories, page }) {
     const input = {
@@ -148,7 +149,7 @@ function questionForm(question) {
             <button onClick=${onAddClick}>Add answer</button>
         </div>
         <div className="question-control">
-            <button>Preview</button>
+            <button data-state="off" onClick=${togglePreview}>Preview</button>
             <button onClick=${onSave}>Save changes</button>
             ${cancelBtn}
             <button onClick=${onDelete}>&#10006; Delete question</button>
@@ -245,6 +246,19 @@ function questionForm(question) {
         } else {
             cancelBtn.disabled = true;
             e.classList.remove('modified');
+        }
+    }
+
+    function togglePreview({ target }) {
+        if (target.dataset.state == 'off') {
+            target.dataset.state = 'on';
+            target.textContent = 'Hide';
+            e.preview = quizQuestion(read(), input.order.value);
+            e.appendChild(e.preview);
+        } else {
+            target.dataset.state = 'off';
+            target.textContent = 'Preview';
+            e.preview.remove();
         }
     }
 }

@@ -18,6 +18,9 @@ export function e(type, content, attributes) {
     for (const k of Object.keys(attributes || {})) {
         if (k.startsWith('on')) {
             result.addEventListener(k.substring(2).toLowerCase(), attributes[k]);
+        } else if (k.startsWith('data-')) {
+            const propName = k.slice(5);
+            result.dataset[propName] = attributes[k];
         } else {
             result[k] = attributes[k];
         }
