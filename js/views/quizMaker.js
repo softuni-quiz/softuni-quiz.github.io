@@ -128,6 +128,11 @@ function questionForm(question) {
         answers: html`<div></div>`,
         dontRandomize: html`<input type="checkbox" />`
     };
+    input.order.addEventListener('input', showModified);
+    input.text.addEventListener('input', showModified);
+    input.dontRandomize.addEventListener('input', showModified);
+
+    const cancelBtn = html`<button onClick=${onCancel}>Reset</button>`;
 
     const e = html`
     <div className="question-form">
@@ -145,12 +150,20 @@ function questionForm(question) {
         <div className="question-control">
             <button>Preview</button>
             <button onClick=${onSave}>Save changes</button>
+            ${cancelBtn}
             <button onClick=${onDelete}>&#10006; Delete question</button>
         </div>
     </div>`;
     e.read = read;
 
-    if (question != undefined) {
+    init();
+
+    let original = JSON.stringify(read());
+    showModified();
+
+    return e;
+
+    function init() {
         input.order.value = question.order;
         input.text.value = question.text;
         input.dontRandomize.checked = question.dontRandomize;
@@ -160,22 +173,29 @@ function questionForm(question) {
         }
     }
 
-    return e;
-
     async function onSave() {
         const over = overlayElement(e);
         try {
             const data = read();
             if (question.objectId) {
+                data.objectId = question.objectId;
                 question = await updateQuestion(question.objectId, data);
             } else {
                 question = await createQuestion(data);
             }
+            original = JSON.stringify(read());
+            showModified();
         } catch (err) {
             notify(err.message);
         } finally {
             over.remove();
         }
+    }
+
+    function onCancel() {
+        input.answers.replaceChildren();
+        init();
+        showModified();
     }
 
     async function onDelete() {
@@ -199,11 +219,12 @@ function questionForm(question) {
     }
 
     function onAddClick() {
-        input.answers.appendChild(answerForm());
+        addAnswer();
+        showModified();
     }
 
     function addAnswer(answer) {
-        input.answers.appendChild(answerForm(answer));
+        input.answers.appendChild(answerForm(showModified, answer));
     }
 
     function read() {
@@ -215,14 +236,28 @@ function questionForm(question) {
             quiz: question.quiz
         };
     }
+
+    function showModified() {
+        const isModified = question.objectId == undefined || original != JSON.stringify(read());
+        if (isModified) {
+            cancelBtn.disabled = false;
+            e.classList.add('modified');
+        } else {
+            cancelBtn.disabled = true;
+            e.classList.remove('modified');
+        }
+    }
 }
 
-function answerForm(answer) {
+function answerForm(showModified, answer) {
     const text = (answer && answer.text.includes('\n')) ? html`<textarea></textarea>` : html`<input type="text" />`;
     const input = {
         check: html`<input type="checkbox" />`,
         text
     };
+    input.check.addEventListener('input', showModified);
+    input.text.addEventListener('input', showModified);
+
     let e;
     e = html`
     <div>
@@ -242,6 +277,7 @@ function answerForm(answer) {
 
     function remove() {
         e.remove();
+        showModified();
     }
 
     function read() {

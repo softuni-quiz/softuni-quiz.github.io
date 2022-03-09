@@ -57,3 +57,7 @@
     clear: both;
     content: "";
 }
+
+.modified {
+    background-color: antiquewhite;
+}
