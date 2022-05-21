@@ -11,8 +11,8 @@ export default function initialize() {
     return function (ctx, next) {
         ctx.updateSession = updateSession;
         ctx.user = user;
-        ctx.isAdmin = user && user.roles.includes('Admin');
-        ctx.isTA = user && user.roles.includes('TA');
+        ctx.isAdmin = user && Array.isArray(user.roles) && user.roles.includes('Admin');
+        ctx.isTA = user && Array.isArray(user.roles) && user.roles.includes('TA');
         _ctx = ctx;
 
         next();
