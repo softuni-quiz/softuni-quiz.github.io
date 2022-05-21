@@ -1,0 +1,37 @@
+.dialog {
+    position: fixed;
+    right: 80px;
+    top: 80px;
+
+    background-color: white;
+    box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
+    padding: 16px 32px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.partial-excluded {
+    background-color: rgba(196, 196, 196, 0.85);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.partial-from {
+    border-top: 8px dashed;
+    border-color: rgb(112, 167, 134);
+}
+
+.partial-included {
+    border-left: 8px dashed;
+    border-right: 8px dashed;
+    border-color: rgb(112, 167, 134);
+}
+
+
+.partial-to {
+    border-bottom: 8px dashed;
+    border-color: rgb(112, 167, 134);
+}
