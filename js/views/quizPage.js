@@ -6,7 +6,7 @@ import { getQuizStats, submitSolution } from '../data/solution.js';
 import { quizQuestion } from './common/question.js';
 
 
-export default async function quizPage({ categories, params: { id }, query, isAdmin }) {
+export default async function quizPage({ categories, params: { id }, query, isAdmin, isTA }) {
     let catName;
     let quiz;
     if (id != undefined) {
@@ -50,7 +50,7 @@ export default async function quizPage({ categories, params: { id }, query, isAd
         input.button.textContent = `${correct.length} / ${result.length} верни отговора`;
 
         const config = `from=${from}&to=${to}`;
-        if (isAdmin) {
+        if (isAdmin || isTA) {
             displayStats(id, config, [...input.questions.children], hours);
         } else {
             // Stat collection
@@ -60,10 +60,10 @@ export default async function quizPage({ categories, params: { id }, query, isAd
     }
 
     function createAdminPanel() {
-        if (isAdmin) {
+        if (isAdmin || isTA) {
             return html`
             <div>
-                <a className="nav" href="/maker/${id}">Редактор</a>
+                ${isAdmin ? html`<a className="nav" href="/maker/${id}">Редактор</a>` : ''}
                 <a className="nav" onClick=${()=> validate(6)} href="javascript:void(0)">Статистика 6h</a>
                 <a className="nav" onClick=${()=> validate(12)} href="javascript:void(0)">Статистика 12h</a>
                 <a className="nav" onClick=${()=> validate(24)} href="javascript:void(0)">Статистика 24h</a>

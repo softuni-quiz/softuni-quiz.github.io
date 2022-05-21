@@ -9,11 +9,10 @@ import quizMaker from './views/quizMaker.js';
 import { getCategories } from './data/quiz.js';
 import { catalog, catSelector } from './views/catalog.js';
 import { loginPage } from './views/login.js';
+import { registerPage } from './views/register.js';
 
-import * as api from './data/question.js';
 import { importerPage } from './views/importer.js';
 import { loader } from './views/common/loader.js';
-window.api = api;
 
 
 window.onload = async () => {
@@ -36,6 +35,7 @@ window.onload = async () => {
     page('/quiz/:id/:quizName', render(quizPage));
 
     page('/login', render(loginPage));
+    page('/register', render(registerPage));
     page('/import/:id', render(importerPage));
 
     page('/:id', quizRedirect);
