@@ -11,7 +11,7 @@ export async function catSelector(ctx) {
         <div className="question">
             <h2>Категории</h2>
             <ul>
-                ${ctx.categories.map(i => html`<li><a className="nav list" href=${`/category/${i.objectId}/${urlName(i.name)}`}>${i.name} </a>
+                ${ctx.categories.filter(c => c.visible || ctx.isAdmin).map(i => html`<li><a className="nav list" href=${`/category/${i.objectId}/${urlName(i.name)}`}>${i.name} </a>
                         </li>`)} </ul> </div> </div>`;
 }
 

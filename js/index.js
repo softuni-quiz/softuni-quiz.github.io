@@ -45,7 +45,7 @@ window.onload = async () => {
     function render(component) {
         return async (ctx) => {
             main.appendChild(spinner);
-            ctx.categories = categories.filter(c => c.visible || ctx.isAdmin);
+            ctx.categories = categories;
             ctx.query = parseQuery(ctx.querystring);
             try {
                 const result = await component(ctx);
