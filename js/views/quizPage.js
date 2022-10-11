@@ -35,6 +35,10 @@ export default async function quizPage({ categories, params: { id }, query, isAd
         button: html`<button className="validate-btn" onClick=${() => validate()}>Изпрати отговори</button>`
     };
 
+    if (isAdmin || isTA) {
+        window.displayStats = (hours) => validate(hours);
+    }
+
     return html`
     <div>
         <h1>${quiz.name}</h1>

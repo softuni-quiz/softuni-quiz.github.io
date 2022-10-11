@@ -19,7 +19,12 @@ export const endpoints = {
 
 function createTimeQuery(hours) {
     const limit = new Date();
-    limit.setHours(limit.getHours() - hours);
+    if (hours < 1) {
+        const minutes = hours * 60;
+        limit.setMinutes(limit.getMinutes() - minutes);
+    } else {
+        limit.setHours(limit.getHours() - hours);
+    }
 
     return {
         $gte: {
